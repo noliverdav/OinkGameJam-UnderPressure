@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c84mbr46ufvm3"]
+
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/player_character_scene.tscn" id="1_wbfu4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xkndl"]
+size = Vector3(7.445801, 1, 9.172852)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u44n3"]
+
+[node name="Node" type="Node" unique_id=1547212266]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1204079572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0190852, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=301240229]
+shape = SubResource("BoxShape3D_xkndl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=513375087]
+transform = Transform3D(6.8536186, 0, 0, 0, 1, 0, 0, 0, 8.774185, 0, 0, 0)
+mesh = SubResource("BoxMesh_u44n3")
+
+[node name="PlayerCharacter" parent="StaticBody3D" unique_id=307017552 instance=ExtResource("1_wbfu4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.256785, 0)
