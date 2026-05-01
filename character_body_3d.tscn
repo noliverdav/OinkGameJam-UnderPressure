@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" uid="uid://d3h8vw5cvutnt" path="res://CameraController.gd" id="1_fb3t6"]
 [ext_resource type="Script" uid="uid://bmyyb14ds0nbm" path="res://MouseCaptureComponent.gd" id="1_iwpo4"]
+[ext_resource type="Script" uid="uid://4nd7uhjnwp3x" path="res://PlayerController.gd" id="1_vd578"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fb3t6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vd578"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=81129901]
+script = ExtResource("1_vd578")
 
 [node name="PlaceholderMesh" type="MeshInstance3D" parent="." unique_id=1430075108]
 mesh = SubResource("CapsuleMesh_fb3t6")
