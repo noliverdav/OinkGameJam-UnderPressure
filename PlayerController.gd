@@ -1,14 +1,22 @@
 class_name PlayerController
 extends CharacterBody3D
 
+var waiting_interacting_to_finish := false
+
 #region Movement
 @export var speed : float = 5.0
 @export var acceleration : float = 10.0
 @export var gravity : float = 9.8
 
 func _physics_process(delta: float) -> void:
-	var input_dir = Vector2.ZERO
 	
+	if waiting_interacting_to_finish:
+		velocity = Vector3.ZERO
+		move_and_slide()
+		return
+	
+	var input_dir = Vector2.ZERO
+
 	input_dir.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	input_dir.y = Input.get_action_strength("move_back") - Input.get_action_strength("move_forward")
 	
@@ -64,10 +72,12 @@ func try_interact():
 
 func start_interaction(obj: Interactable):
 	is_interacting = true
+	waiting_interacting_to_finish = true;
 	
 	if obj.interaction_time > 0:
 		await get_tree().create_timer(obj.interaction_time).timeout
 	
 	obj.interact(self)
 	is_interacting = false
+	waiting_interacting_to_finish = false
 #endregion
