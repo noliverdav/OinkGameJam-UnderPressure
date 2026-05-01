@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://o3vg4ha125dv"]
+
+[ext_resource type="Script" uid="uid://b8sqk0qe7wi76" path="res://Interactuable_Vapor.gd" id="1_oaiqd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_u7sia"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7vhjc"]
+
+[node name="Interactuable_Vapor" type="Node3D" unique_id=931216526]
+script = ExtResource("1_oaiqd")
+interaction_time = 2.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=21276506]
+mesh = SubResource("SphereMesh_u7sia")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2139038503]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1263192513]
+shape = SubResource("SphereShape3D_7vhjc")

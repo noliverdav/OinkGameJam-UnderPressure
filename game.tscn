@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://durc4x7dmglmm"]
 
 [ext_resource type="PackedScene" uid="uid://c3fqi2oo671i2" path="res://character_body_3d.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://o3vg4ha125dv" path="res://interactuable_vapor.tscn" id="2_e2o6t"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_e2o6t"]
 
@@ -26,3 +27,6 @@ transform = Transform3D(0.017452383, 0, -0.9998477, 0, 1, 0, 0.9998477, 0, 0.017
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1290207835]
 shape = SubResource("BoxShape3D_80nbo")
+
+[node name="Interactuable_Vapor" parent="." unique_id=931216526 instance=ExtResource("2_e2o6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5175118, -2.564927)

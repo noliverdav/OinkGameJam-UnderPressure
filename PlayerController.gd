@@ -1,6 +1,7 @@
 class_name PlayerController
 extends CharacterBody3D
 
+#region Movement
 @export var speed : float = 5.0
 @export var acceleration : float = 10.0
 @export var gravity : float = 9.8
@@ -28,3 +29,45 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 0.0
 	
 	move_and_slide()
+#endregion
+
+#region Interacion
+@onready var raycast : RayCast3D = $CameraController/Camera3D/RayCast3D
+
+var is_interacting := false
+
+func _process(delta):
+	if raycast.is_colliding():
+		var obj = raycast.get_collider()
+	
+		while obj != null:
+			if obj is Interactable:
+				print("interactable")
+				break
+			obj = obj.get_parent()
+
+	if Input.is_action_just_pressed("interact") and not is_interacting:
+		try_interact()
+
+func try_interact():
+	if not raycast.is_colliding():
+		return
+	
+	var collider = raycast.get_collider()
+	var obj = collider
+	
+	while obj != null:
+		if obj is Interactable:
+			start_interaction(obj)
+			return
+		obj = obj.get_parent()
+
+func start_interaction(obj: Interactable):
+	is_interacting = true
+	
+	if obj.interaction_time > 0:
+		await get_tree().create_timer(obj.interaction_time).timeout
+	
+	obj.interact(self)
+	is_interacting = false
+#endregion
