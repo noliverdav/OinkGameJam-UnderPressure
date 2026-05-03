@@ -15,3 +15,11 @@ func interact(body):
 func update_visual():
 	if missile_mesh:
 		missile_mesh.visible = loadState
+		
+func fire():
+	if not loadState:
+		return
+	#if door and door.is_open:
+		#return
+	loadState = false
+	update_visual()

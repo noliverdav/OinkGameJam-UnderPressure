@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://7efbiglmlt4d" path="res://InteractuableEscotilla.tscn" id="15_cbyn2"]
 [ext_resource type="PackedScene" uid="uid://pavmh5ybknl1" path="res://Interactuable_MissileCannon.tscn" id="16_pa3lv"]
 [ext_resource type="PackedScene" uid="uid://cyts0jt4t2b7h" path="res://MissilSupply.tscn" id="17_ov6fa"]
+[ext_resource type="PackedScene" uid="uid://ctihsrkqrauwo" path="res://Interactable_missil_launch.tscn" id="18_kg1ut"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tnqhx"]
 sky_top_color = Color(0.2304, 0.407893, 0.64, 1)
@@ -200,6 +201,9 @@ transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.3
 
 [node name="MissilSupply" parent="." unique_id=558662085 instance=ExtResource("17_ov6fa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18590817, 0.49999762, 6.704252)
+
+[node name="Interactable_MissilLaunch" parent="." unique_id=911175903 instance=ExtResource("18_kg1ut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.967412, -1.9073486e-06, 8.7754345)
 
 [connection signal="interacted" from="Button" to="Door" method="toggle"]
 [connection signal="interacted" from="Button2" to="MovingPlatform" method="toggle"]

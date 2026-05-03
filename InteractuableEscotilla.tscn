@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://7efbiglmlt4d"]
 
 [ext_resource type="Script" uid="uid://dk8js7fuahsc2" path="res://interactuable_escotilla.gd" id="1_m127l"]
+[ext_resource type="Script" uid="uid://crjdp4pqalnli" path="res://Escotilla_Logica.gd" id="1_qnup6"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_s2akp"]
 
@@ -88,6 +89,7 @@ states/Start/position = Vector2(223, 100)
 transitions = ["Start", "Closed", SubResource("AnimationNodeStateMachineTransition_s2akp"), "Closed", "Open", SubResource("AnimationNodeStateMachineTransition_61ht2"), "Open", "Closed", SubResource("AnimationNodeStateMachineTransition_1uecj")]
 
 [node name="InteractuableEscotilla" type="Node3D" unique_id=2113646208]
+script = ExtResource("1_qnup6")
 
 [node name="PivotPuerta" type="Node3D" parent="." unique_id=1919673624]
 transform = Transform3D(0.9999999, 0, 0, 0, -4.813788e-09, -0.9999999, 0, 0.11012664, -4.3711385e-08, -0.542, 0, 0)
@@ -103,7 +105,6 @@ shape = SubResource("CylinderShape3D_m127l")
 
 [node name="Area3D" type="Area3D" parent="PivotPuerta/MeshInstance3D" unique_id=1813553044]
 script = ExtResource("1_m127l")
-prompt_message = ""
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PivotPuerta/MeshInstance3D/Area3D" unique_id=224958423]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.30956483, 3.5527137e-15)
