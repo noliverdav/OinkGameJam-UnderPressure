@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b4opjllgffad7" path="res://TutorialYoutube/Button.tscn" id="13_2qjvi"]
 [ext_resource type="PackedScene" uid="uid://dsd6mrylbfdp" path="res://TutorialYoutube/Keycard.tscn" id="13_8t3jv"]
 [ext_resource type="PackedScene" uid="uid://0vfe1qnxrku4" path="res://TutorialYoutube/Chest.tscn" id="13_jwga1"]
+[ext_resource type="PackedScene" uid="uid://cavx0y1n3a6ss" path="res://Interactuable_Perilla.tscn" id="14_wi8fs"]
 [ext_resource type="PackedScene" uid="uid://cnyxak6eaknw8" path="res://TutorialYoutube/Door.tscn" id="14_wx2ns"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tnqhx"]
@@ -184,6 +185,9 @@ item_id = "GRAPE"
 [node name="Chest4" parent="." unique_id=563956972 instance=ExtResource("13_jwga1")]
 transform = Transform3D(0.0521439, 0, -0.998639, 0, 1, 0, 0.998639, 0, 0.0521439, 18.4605, 0, 11.8898)
 item_id = "MANGO"
+
+[node name="InteractuablePerilla" parent="." unique_id=1909881583 instance=ExtResource("14_wi8fs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8150024, 2.774596, 0.6435547)
 
 [connection signal="interacted" from="Button" to="Door" method="toggle"]
 [connection signal="interacted" from="Button2" to="MovingPlatform" method="toggle"]
