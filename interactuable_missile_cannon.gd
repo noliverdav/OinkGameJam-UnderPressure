@@ -4,9 +4,10 @@ var loadState := false;
 @export var missile_mesh: Node3D
 
 func interact(body):
-	if not enabled:
-		return
 	
+	if not enabled or GameState.get_value("gabbedMissil")==false:
+		return
+	GameState.set_value("gabbedMissil", false)
 	loadState = !loadState
 	update_visual()
 

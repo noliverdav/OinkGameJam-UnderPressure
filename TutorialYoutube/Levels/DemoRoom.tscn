@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cnyxak6eaknw8" path="res://TutorialYoutube/Door.tscn" id="14_wx2ns"]
 [ext_resource type="PackedScene" uid="uid://7efbiglmlt4d" path="res://InteractuableEscotilla.tscn" id="15_cbyn2"]
 [ext_resource type="PackedScene" uid="uid://pavmh5ybknl1" path="res://Interactuable_MissileCannon.tscn" id="16_pa3lv"]
+[ext_resource type="PackedScene" uid="uid://cyts0jt4t2b7h" path="res://MissilSupply.tscn" id="17_ov6fa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tnqhx"]
 sky_top_color = Color(0.2304, 0.407893, 0.64, 1)
@@ -196,6 +197,9 @@ transform = Transform3D(-1.3831048, 1.2091486e-07, 0, -1.2091486e-07, -1.3831048
 
 [node name="InteractuableMissileCannon" parent="." unique_id=702161493 instance=ExtResource("16_pa3lv")]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 6.261, 2.033, 4.944192)
+
+[node name="MissilSupply" parent="." unique_id=558662085 instance=ExtResource("17_ov6fa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18590817, 0.49999762, 6.704252)
 
 [connection signal="interacted" from="Button" to="Door" method="toggle"]
 [connection signal="interacted" from="Button2" to="MovingPlatform" method="toggle"]

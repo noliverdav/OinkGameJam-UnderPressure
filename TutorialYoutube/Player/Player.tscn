@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cmvudfv03wcmd"]
 
 [ext_resource type="Script" uid="uid://bgxl2q47f7bkb" path="res://TutorialYoutube/Player/player.gd" id="1_iyqmc"]
+[ext_resource type="Script" uid="uid://cienjoyv87err" path="res://player_missilGrabbed_mesh_toggle.gd" id="2_2bhh8"]
 [ext_resource type="Texture2D" uid="uid://dxn8y4celdh0r" path="res://TutorialYoutube/Player/hurt.png" id="2_ehnts"]
 [ext_resource type="PackedScene" uid="uid://by7g6qtybner8" path="res://TutorialYoutube/Interact/InteractRay.tscn" id="2_h0cin"]
 [ext_resource type="Script" uid="uid://d0ltho5qcjg6u" path="res://TutorialYoutube/Player/ui.gd" id="3_uw0jf"]
@@ -53,6 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.93565583, -1.1508439)
 transform = Transform3D(0.33961672, -1.2078539, 0, 0.74066, 0.5538404, 0, 0, 0, 0.66181153, 0, 0, 0)
 visible = false
 mesh = SubResource("CapsuleMesh_tixxx")
+script = ExtResource("2_2bhh8")
 
 [node name="InteractRay" parent="Head" unique_id=1197492959 instance=ExtResource("2_h0cin")]
 

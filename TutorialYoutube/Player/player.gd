@@ -33,6 +33,7 @@ var old_vel : float = 0.0
 var hurt_tween : Tween
 var moving : bool = true
 
+@onready var missile_mesh = $Head/Camera3D/HandsPivot/MissilGrabed
 
 func _ready():
 	look_rot.y = rotation_degrees.y
