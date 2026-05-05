@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d3m6c4je48grl"]
+
+[ext_resource type="Script" uid="uid://d4ffmbg5t5b4m" path="res://Enemy.gd" id="1_tt7e2"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_tt7e2"]
+
+[node name="Node3D" type="Node3D" unique_id=155231002]
+script = ExtResource("1_tt7e2")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=1161812418]
+wait_time = 30.0
+autostart = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1458028284]
+mesh = SubResource("SphereMesh_tt7e2")

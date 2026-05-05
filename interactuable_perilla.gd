@@ -1,19 +1,23 @@
 extends Interactable
 class_name InteractuablePerilla
-@export var step: float = 1.0
+@export var step: int = 1
 
 @export var label: Label3D
 
-var current_degrees: float = 0.0
+var current_degrees: int = 0
 var is_interacting: bool = false
+var _internal_degrees: float = 0.0
+
 
 func _process(delta):
 	if not is_interacting:
 		return
 	if Input.is_action_pressed("Increse_grades"):
-		current_degrees += step * delta * 10
+		_internal_degrees += step * delta * 10
 	if Input.is_action_pressed("Decrese_grades"):
-		current_degrees -= step * delta * 10
+		_internal_degrees -= step * delta * 10
+	current_degrees = round(_internal_degrees)
+
 	#current_degrees = clamp(current_degrees, min_degrees, max_degrees)
 	update_visual()
 
@@ -33,4 +37,4 @@ func stop_interacting():
 
 func update_visual():
 	if label:
-		label.text = str(round(current_degrees)) + "°"
+		label.text = str(current_degrees) + "°"
