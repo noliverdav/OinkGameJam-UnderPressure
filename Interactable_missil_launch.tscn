@@ -19,17 +19,15 @@ transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.3
 [node name="InteractuableEscotilla" parent="Node3D" unique_id=2113646208 instance=ExtResource("2_6yrvv")]
 transform = Transform3D(-1.3831048, 1.2091486e-07, 0, -1.2091486e-07, -1.3831048, 0, 0, 0, 1.3831048, 0, 0, 0)
 
-[node name="LauncButtom" type="Node3D" parent="." unique_id=1312658347]
-
-[node name="Area3D" type="Area3D" parent="LauncButtom" unique_id=286143229 node_paths=PackedStringArray("cannon", "door")]
+[node name="Area3D" type="Area3D" parent="." unique_id=286143229 node_paths=PackedStringArray("cannon", "door")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.799166, 0)
 script = ExtResource("3_ufqe0")
-cannon = NodePath("../../Node3D/InteractuableMissileCannon")
-door = NodePath("../../Node3D/InteractuableEscotilla")
+cannon = NodePath("../Node3D/InteractuableMissileCannon")
+door = NodePath("../Node3D/InteractuableEscotilla")
 prompt_message = "Fire"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LauncButtom/Area3D" unique_id=1278716785]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1278716785]
 shape = SubResource("BoxShape3D_vvc4c")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="LauncButtom/Area3D" unique_id=1009398549]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=1009398549]
 mesh = SubResource("BoxMesh_1blgb")
