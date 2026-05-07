@@ -6,7 +6,6 @@ extends Node
 var enemies_list: Array = []
 
 func _ready():
-	#You will have to add a reference to inventory node with @export or other method
 	cannon.connect("fireSignal", cannonFiredCheckEnemies)
 
 var spawn_timer := 0.0

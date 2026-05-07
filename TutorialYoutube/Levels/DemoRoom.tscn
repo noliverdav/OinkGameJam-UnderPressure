@@ -240,7 +240,7 @@ shape = SubResource("BoxShape3D_iy0sg")
 mesh = SubResource("BoxMesh_3mrky")
 
 [node name="Node3D" parent="." unique_id=799756806 node_paths=PackedStringArray("cannon") instance=ExtResource("20_iy0sg")]
-transform = Transform3D(0.0038862736, -0.04932477, 0.086902045, 0.099691056, 0.007854608, 0, -0.006825814, 0.086633556, 0.049477626, 4.68838, 1.9759896, 1.7274332)
+transform = Transform3D(0.030433226, 0.039671388, 1.7340913e-09, 0, -2.1855695e-09, 0.05, 0.039671388, -0.030433226, -1.3302786e-09, 5.148651, 3.3003485, 1.7235727)
 spawn_interval = 0.1
 cannon = NodePath("../InteractuableMissileCannon2")
 
