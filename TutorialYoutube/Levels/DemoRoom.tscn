@@ -143,6 +143,7 @@ data = PackedVector3Array(-17.5, 0, 17.5, -17.5, 0, 20, -20, 0, 17.5, -12.5, 10,
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2122167169]
 transform = Transform3D(2.3695078, 0, 0, 0, 2.3695078, 0, 0, 0, 2.3695078, 0.087916225, 3.6876926, 13.425244)
+visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_3mrky")
 
@@ -256,6 +257,11 @@ mesh = SubResource("BoxMesh_3mrky")
 [node name="Node3D" parent="." unique_id=799756806 instance=ExtResource("20_iy0sg")]
 transform = Transform3D(0.0038862736, -0.04932477, 0.086902045, 0.099691056, 0.007854608, 0, -0.006825814, 0.086633556, 0.049477626, 4.68838, 1.9759896, 1.7274332)
 spawn_interval = 0.1
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1334000644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.637772, 6.424203)
+light_energy = 10.082
+shadow_enabled = true
 
 [connection signal="interacted" from="Button" to="Door" method="toggle"]
 [connection signal="interacted" from="Button2" to="MovingPlatform" method="toggle"]

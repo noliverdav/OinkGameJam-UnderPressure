@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://wuq7sx0y71g"]
+
+[ext_resource type="Texture2D" uid="uid://dtwbiyh4178he" path="res://Models/Lockers/Texture/Locker_64_TEX.jpg" id="1_fj8ix"]
+
+[resource]
+resource_name = "Material.001"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_fj8ix")
+emission_enabled = true
