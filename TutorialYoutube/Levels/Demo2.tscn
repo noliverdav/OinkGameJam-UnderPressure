@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cmvudfv03wcmd" path="res://TutorialYoutube/Player/Player.tscn" id="1_aw33w"]
 [ext_resource type="PackedScene" uid="uid://ynhnuwu74jp7" path="res://TutorialYoutube/Levels/SceneSwitcher.tscn" id="2_4i8xn"]
+[ext_resource type="Shader" uid="uid://brknbqqgcqnyt" path="res://Shader/Overlay.gdshader" id="2_cfs2j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0qnu8"]
 sky_top_color = Color(0, 0.0392157, 0.4, 1)
@@ -19,6 +20,15 @@ tonemap_mode = 2
 ssao_enabled = true
 glow_enabled = true
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pmf62"]
+render_priority = 0
+shader = ExtResource("2_cfs2j")
+shader_parameter/pixel_size = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_pvwha"]
+material = SubResource("ShaderMaterial_pmf62")
+size = Vector2(2, 2)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdvdr"]
 albedo_color = Color(0.94902, 0.65098, 0.368627, 1)
 
@@ -29,22 +39,26 @@ size = Vector3(10, 1, 20)
 [sub_resource type="BoxShape3D" id="BoxShape3D_avl1d"]
 size = Vector3(10, 1, 20)
 
-[node name="Demo2" type="Node3D"]
+[node name="Demo2" type="Node3D" unique_id=1182469113]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1214833178]
 environment = SubResource("Environment_00alv")
 
-[node name="Player" parent="." instance=ExtResource("1_aw33w")]
+[node name="Player" parent="." unique_id=648527241 instance=ExtResource("1_aw33w")]
 
-[node name="Floor" type="StaticBody3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=429969265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8366907, -0.48341417)
+mesh = SubResource("QuadMesh_pvwha")
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=912125640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -5)
 
-[node name="MeshInstance" type="MeshInstance3D" parent="Floor"]
+[node name="MeshInstance" type="MeshInstance3D" parent="Floor" unique_id=818620269]
 mesh = SubResource("BoxMesh_qpk25")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1272459656]
 shape = SubResource("BoxShape3D_avl1d")
 
-[node name="SceneSwitcher" parent="." instance=ExtResource("2_4i8xn")]
+[node name="SceneSwitcher" parent="." unique_id=650458343 instance=ExtResource("2_4i8xn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -10)
 to_scene = "res://Levels/DemoRoom.tscn"

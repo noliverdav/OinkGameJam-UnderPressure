@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cfneo5ak1pl3b"]
+
+[ext_resource type="Texture2D" uid="uid://cgvnhujxtleos" path="res://Models/Shelves/Textures/Kitchen_Shelve.jpg" id="1_x686d"]
+
+[resource]
+resource_name = "Kitchen_FShelves.001"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_x686d")
+emission_enabled = true

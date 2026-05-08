@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c4so1b05jg1uf"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lhynp"]
+load_path = "res://.godot/imported/01_Poster.jpg-e5cc5267467e89f6820bfb14cb1c9216.ctex"
+
+[resource]
+resource_name = "Poster01"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = SubResource("CompressedTexture2D_lhynp")
+emission_enabled = true

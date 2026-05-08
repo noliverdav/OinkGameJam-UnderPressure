@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dxwtgkdir728" path="res://TutorialYoutube/Levels/textures/wall-rough.png" id="5_y1r2w"]
 [ext_resource type="Texture2D" uid="uid://cp25xqkr0erht" path="res://TutorialYoutube/Levels/textures/wall-norm.png" id="6_k3vsg"]
 [ext_resource type="PackedScene" uid="uid://cmvudfv03wcmd" path="res://TutorialYoutube/Player/Player.tscn" id="7_mm4nv"]
+[ext_resource type="Shader" uid="uid://brknbqqgcqnyt" path="res://Shader/Overlay.gdshader" id="8_iy0sg"]
 [ext_resource type="PackedScene" uid="uid://bs3onrkfk3cq7" path="res://TutorialYoutube/MovingPlatform.tscn" id="11_2da24"]
 [ext_resource type="PackedScene" uid="uid://ynhnuwu74jp7" path="res://TutorialYoutube/Levels/SceneSwitcher.tscn" id="12_2t7ls"]
 [ext_resource type="PackedScene" uid="uid://b4opjllgffad7" path="res://TutorialYoutube/Button.tscn" id="13_2qjvi"]
@@ -20,6 +21,18 @@
 [ext_resource type="PackedScene" uid="uid://ctihsrkqrauwo" path="res://Interactable_missil_launch.tscn" id="18_kg1ut"]
 [ext_resource type="Script" uid="uid://cwtptfinjhiav" path="res://Interactable_LauncMissilButton.gd" id="19_ciqxv"]
 [ext_resource type="PackedScene" uid="uid://dxki41ba8y3aa" path="res://Minimap.tscn" id="20_iy0sg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iy0sg"]
+render_priority = 0
+shader = ExtResource("8_iy0sg")
+shader_parameter/pixel_size = 4.0
+shader_parameter/levels = 20.30000030249436
+shader_parameter/gamma = Vector2(0.33, 5.35)
+
+[sub_resource type="QuadMesh" id="QuadMesh_3mrky"]
+material = SubResource("ShaderMaterial_iy0sg")
+flip_faces = true
+size = Vector2(2, 2)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tnqhx"]
 sky_top_color = Color(0.2304, 0.407893, 0.64, 1)
@@ -127,6 +140,12 @@ data = PackedVector3Array(-17.5, 0, 17.5, -17.5, 0, 20, -20, 0, 17.5, -12.5, 10,
 [sub_resource type="BoxMesh" id="BoxMesh_3mrky"]
 
 [node name="DemoRoom" type="Node3D" unique_id=774936789]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2122167169]
+transform = Transform3D(2.3695078, 0, 0, 0, 2.3695078, 0, 0, 0, 2.3695078, 0.087916225, 3.6876926, 13.425244)
+visible = false
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_3mrky")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2136623942]
 environment = SubResource("Environment_g25d3")
@@ -243,6 +262,11 @@ mesh = SubResource("BoxMesh_3mrky")
 transform = Transform3D(0.030433226, 0.039671388, 1.7340913e-09, 0, -2.1855695e-09, 0.05, 0.039671388, -0.030433226, -1.3302786e-09, 5.148651, 3.3003485, 1.7235727)
 spawn_interval = 0.1
 cannon = NodePath("../InteractuableMissileCannon2")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1334000644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.637772, 6.424203)
+light_energy = 10.082
+shadow_enabled = true
 
 [connection signal="interacted" from="Button" to="Door" method="toggle"]
 [connection signal="interacted" from="Button2" to="MovingPlatform" method="toggle"]
