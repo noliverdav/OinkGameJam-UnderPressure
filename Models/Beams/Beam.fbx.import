@@ -37,7 +37,20 @@ import_script/path=""
 materials/extract=1
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"Metalbeam_TEX": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Models/Beams/Metalbeam_TEX.tres",
+"use_external/path": "uid://bufj6i03xrrak"
+}
+},
+"nodes": {
+"PATH:MetalBeam_001": {
+"generate/physics": true
+}
+}
+}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1

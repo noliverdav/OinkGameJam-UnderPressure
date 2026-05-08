@@ -1,7 +1,10 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://cpmqg1fvhhi3i"]
 
+[ext_resource type="Texture2D" uid="uid://b0g48v7kdh0e0" path="res://Models/Ammo Shell/Texture/Shell_64_TEX.jpg" id="1_yncl3"]
+
 [resource]
 resource_name = "Shell_TEX"
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_yncl3")
 emission_enabled = true

@@ -1,7 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://wo3xo7ekvfhh"]
 
+[ext_resource type="Texture2D" uid="uid://c80q1x8lxy887" path="res://Models/Kitchen/Coffe Pot/Textures/Kitchen_CoffePot.jpg" id="1_yd8w5"]
+
 [resource]
 resource_name = "lambert7SG"
-vertex_color_use_as_albedo = true
 albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_yd8w5")
 emission_enabled = true

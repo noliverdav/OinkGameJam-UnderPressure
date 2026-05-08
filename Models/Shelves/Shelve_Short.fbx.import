@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://u2ijyhqr8ylk"
+uid="uid://dirwrgn78vtdh"
 path="res://.godot/imported/Shelve_Short.fbx-00113895de4c616e62db6dae20395601.scn"
 
 [deps]
@@ -34,10 +34,23 @@ animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-materials/extract=1
+materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"Kitchen_FShelves": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Models/Shelves/Textures/Kitchen_FShelves.tres",
+"use_external/path": "uid://ciefj00ploiwa"
+}
+},
+"nodes": {
+"PATH:Kitchen_FShelve_Short": {
+"generate/physics": true
+}
+}
+}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1

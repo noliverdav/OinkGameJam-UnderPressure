@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cntguih10c380"]
+
+[ext_resource type="Texture2D" uid="uid://byg1dsdpj2l03" path="res://Models/Shelves/Textures/Kitchen_Shelve.jpg" id="1_3fbqc"]
+
+[resource]
+albedo_texture = ExtResource("1_3fbqc")

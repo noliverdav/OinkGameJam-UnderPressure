@@ -1,7 +1,10 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dfql077215ktg"]
 
+[ext_resource type="Texture2D" uid="uid://dd0k18ad3obf7" path="res://Models/Ammo Box/Texture/AmmoBox_TEX.jpg" id="1_int8m"]
+
 [resource]
 resource_name = "Am.001"
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_int8m")
 emission_enabled = true

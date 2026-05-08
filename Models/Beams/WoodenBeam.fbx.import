@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d4bl7w8ffiqp"
-path="res://.godot/imported/VentilationShaft.fbx-be4e18269dba52bbf09f5bfcf3053431.scn"
+uid="uid://b6c3jaa11upof"
+path="res://.godot/imported/WoodenBeam.fbx-24711734a24fb7f1982e48513cf5fce5.scn"
 
 [deps]
 
-source_file="res://Models/Ventilation/VentilationShaft.fbx"
-dest_files=["res://.godot/imported/VentilationShaft.fbx-be4e18269dba52bbf09f5bfcf3053431.scn"]
+source_file="res://Models/Beams/WoodenBeam.fbx"
+dest_files=["res://.godot/imported/WoodenBeam.fbx-24711734a24fb7f1982e48513cf5fce5.scn"]
 
 [params]
 
@@ -34,19 +34,19 @@ animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-materials/extract=1
+materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"VentilationShaft": {
+"Metalbeam_TEX": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://Models/Ventilation/VentilationShaft.tres",
-"use_external/path": "uid://d3u874qkwv71t"
+"use_external/fallback_path": "res://Models/Beams/Woodenbeam_TEX.tres",
+"use_external/path": "uid://c10gpnavcetor"
 }
 },
 "nodes": {
-"PATH:VentilationShaft_001": {
+"PATH:MetalBeam_001": {
 "generate/physics": true
 }
 }
