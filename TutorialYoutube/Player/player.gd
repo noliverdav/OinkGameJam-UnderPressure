@@ -25,6 +25,7 @@ class_name Player
 @onready var collision_shape = $CollisionShape3D
 @onready var top_cast = $TopCast
 @onready var ui = $UI
+@onready var camera = $Head/Camera3D
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var look_rot : Vector2
@@ -34,16 +35,24 @@ var hurt_tween : Tween
 var moving : bool = true
 
 @onready var missile_mesh = $Head/Camera3D/HandsPivot/MissilGrabed
+var dead = false;
 
 func _ready():
+	moving = true
 	look_rot.y = rotation_degrees.y
 	stand_height = collision_shape.shape.height
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	dead = false
 
 
 func _physics_process(delta):
 	# movement
 	var move_speed = speed
+	
+	#if !camera.current:
+	#	moving = false
+	#if !dead and camera.current:
+	#	moving = true
 	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -84,9 +93,10 @@ func _physics_process(delta):
 
 func _input(event):
 	if event is InputEventMouseMotion and moving:
-		look_rot.y -= (event.relative.x * sensitivity)
-		look_rot.x -= (event.relative.y * sensitivity)
-		look_rot.x = clamp(look_rot.x, min_angle, max_angle)
+		if(camera.current):
+			look_rot.y -= (event.relative.x * sensitivity)
+			look_rot.x -= (event.relative.y * sensitivity)
+			look_rot.x = clamp(look_rot.x, min_angle, max_angle)
 
 
 func crouch(delta : float, reverse = false):
@@ -105,5 +115,6 @@ func hurt(damage : float):
 
 
 func die():
+	dead = true
 	moving = false
 	ui.show_gameover()

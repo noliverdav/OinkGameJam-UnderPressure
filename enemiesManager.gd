@@ -2,34 +2,77 @@ extends Node
 @export var enemy_scene: PackedScene
 @export var spawn_interval := 5.0
 @export var cannon: Node3D
+var enemiesLimiter:=1
+var spawnedEnemiesCounter:=0
 
 var enemies_list: Array = []
+@onready var head = $Head
 
 func _ready():
 	cannon.connect("fireSignal", cannonFiredCheckEnemies)
+	spawnedEnemiesCounter = enemiesLimiter
 
 var spawn_timer := 0.0
 
 func _process(delta):
 	spawn_timer += delta
+
 	
-	if spawn_timer >= spawn_interval and enemies_list.size()<3:
+	if spawn_timer >= spawn_interval and enemies_list.size()<enemiesLimiter and spawnedEnemiesCounter>0:
 		spawn_enemy()
 		spawn_timer = 0.0
 	
 func spawn_enemy():
+	spawnedEnemiesCounter-=1
 	var enemyInstance = enemy_scene.instantiate()
 	enemies_list.append(enemyInstance)
 	add_child(enemyInstance)
 	
+func checkWave_IncreaseEnemies():
+	if GameState.get_value("enemyCurrentWave")>=0:
+		enemiesLimiter=1
+	if GameState.get_value("enemyCurrentWave")>=5:
+		enemiesLimiter=2
+	if GameState.get_value("enemyCurrentWave")>=15:
+		enemiesLimiter=3
+	spawnedEnemiesCounter = enemiesLimiter
 
 	
 func cannonFiredCheckEnemies(coordx,coordy):
 	print("fire: ", coordx," - ",coordy)
 	for enemy in enemies_list:
+		
 		if enemy.has_method("check_hit"):
 			var hit = enemy.check_hit(coordx, coordy)
+			
 			if hit:
 				enemies_list.erase(enemy)
+				enemy.Destroy()
 				spawn_timer = 0
-				break 
+				Check_CleanEnemiesWave()
+				break
+
+func Check_CleanEnemiesWave():
+	if(enemies_list.is_empty()):
+		GameState.nextWave()
+		checkWave_IncreaseEnemies()
+
+
+func _unhandled_input(event):
+	if minimapCamera.current:
+		if event is InputEventMouseMotion:
+			print(head.rotation_degrees)
+			head.rotate_z(deg_to_rad(-event.relative.x * 0.002))
+			head.rotate_x(deg_to_rad(-event.relative.y * 0.002))
+
+
+var playerCamera:Camera3D
+@export var minimapCamera:Camera3D
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	playerCamera = get_viewport().get_camera_3d()
+	if minimapCamera:
+		minimapCamera.make_current()
+	
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if playerCamera:
+		playerCamera.make_current()

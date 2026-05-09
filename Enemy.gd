@@ -13,9 +13,11 @@ func _ready() -> void:
 	
 func check_hit(tx, ty) -> bool:
 	if tx == coordX and ty == coordY:
-		queue_free()
 		return true
 	return false
+	
+func Destroy():
+	queue_free()
 
 #tomado desde Signals
 func _on_attack_timer_timeout() -> void:

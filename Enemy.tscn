@@ -10,6 +10,7 @@ script = ExtResource("1_tt7e2")
 label = NodePath("coords_text")
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=1161812418]
+wait_time = 30.0
 autostart = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1458028284]
