@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b1oyodll01dmj"
-path="res://.godot/imported/Cable_Decal.fbx-fad2cca121d72713ac9d18ee3740a063.scn"
+uid="uid://bh61rdk2mge7s"
+path="res://.godot/imported/Poster04.fbx-0b5e537d86a80630699a6a3cfce4e0a1.scn"
 
 [deps]
 
-source_file="res://Models/Electrical/Cables/Cable_Decal.fbx"
-dest_files=["res://.godot/imported/Cable_Decal.fbx-fad2cca121d72713ac9d18ee3740a063.scn"]
+source_file="res://Models/Poster/Poster04.fbx"
+dest_files=["res://.godot/imported/Poster04.fbx-0b5e537d86a80630699a6a3cfce4e0a1.scn"]
 
 [params]
 
@@ -34,15 +34,15 @@ animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-materials/extract=1
+materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"CablesBundle_TEX": {
+"Poster01": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://Models/Electrical/Cables/CablesBundle_TEX.tres",
-"use_external/path": "uid://kurokqn2i416"
+"use_external/fallback_path": "res://Models/Poster/Poster04.tres",
+"use_external/path": "uid://didukrns2tv6s"
 }
 }
 }
