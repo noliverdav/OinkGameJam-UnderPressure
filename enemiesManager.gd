@@ -6,7 +6,7 @@ var enemiesLimiter:=1
 var spawnedEnemiesCounter:=0
 
 var enemies_list: Array = []
-@onready var head = $Head
+@onready var coordsMinimap =$EnemyCoords
 
 func _ready():
 	cannon.connect("fireSignal", cannonFiredCheckEnemies)
@@ -15,12 +15,13 @@ func _ready():
 var spawn_timer := 0.0
 
 func _process(delta):
+	checkEnemySelected()
 	spawn_timer += delta
-
 	
 	if spawn_timer >= spawn_interval and enemies_list.size()<enemiesLimiter and spawnedEnemiesCounter>0:
 		spawn_enemy()
 		spawn_timer = 0.0
+	
 	
 func spawn_enemy():
 	spawnedEnemiesCounter-=1
@@ -37,6 +38,16 @@ func checkWave_IncreaseEnemies():
 		enemiesLimiter=3
 	spawnedEnemiesCounter = enemiesLimiter
 
+func checkEnemySelected():
+	var oneEnemySelected = false
+	for enemy in enemies_list:
+		if(enemy.get_selectedEnemy()):
+			oneEnemySelected = true;
+			coordsMinimap.text = "("+str(enemy.getCoord_X()) + " , "+str(enemy.getCoord_Y())+","+str(enemy.getCoord_Z())+ ")"
+			break
+	
+	if(!oneEnemySelected):
+		coordsMinimap.text = "(***)"	
 	
 func cannonFiredCheckEnemies(coordx,coordy,coordz):
 	print("fire: ", coordx," - ",coordy, " - ", coordz)
@@ -58,19 +69,19 @@ func Check_CleanEnemiesWave():
 		checkWave_IncreaseEnemies()
 
 
-func _input(event: InputEvent) -> void:
-	if minimapCamera.current:
-		if event is InputEventMouseMotion:
-			head.rotate_z(deg_to_rad(-event.relative.x * 0.002))
-			head.rotate_x(deg_to_rad(-event.relative.y * 0.002))
+#func _input(event: InputEvent) -> void:
+#	if minimapCamera.current:
+#		if event is InputEventMouseMotion:
+#			head.rotate_z(deg_to_rad(-event.relative.x * 0.002))
+#			head.rotate_x(deg_to_rad(-event.relative.y * 0.002))
 
-var playerCamera:Camera3D
-@export var minimapCamera:Camera3D
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	playerCamera = get_viewport().get_camera_3d()
-	if minimapCamera:
-		minimapCamera.make_current()
+#var playerCamera:Camera3D
+#@export var minimapCamera:Camera3D
+#func _on_area_3d_body_entered(body: Node3D) -> void:
+#	playerCamera = get_viewport().get_camera_3d()
+#	if minimapCamera:
+#		minimapCamera.make_current()
 	
-func _on_area_3d_body_exited(body: Node3D) -> void:
-	if playerCamera:
-		playerCamera.make_current()
+#func _on_area_3d_body_exited(body: Node3D) -> void:
+#	if playerCamera:
+#		playerCamera.make_current()
