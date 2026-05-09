@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://5624gm5jo3jw"]
+
+[ext_resource type="Texture2D" uid="uid://dbgq1rkpuuqdt" path="res://Models/Poster/Textures/06_Poster.jpg" id="1_f0yao"]
+
+[resource]
+resource_name = "Poster01"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_f0yao")
+emission_enabled = true

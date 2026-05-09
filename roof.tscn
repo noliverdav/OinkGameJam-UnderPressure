@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cq7ivxfqqpylm"]
+
+[ext_resource type="PackedScene" uid="uid://cw6ceymux6jer" path="res://Models/Floor&Wall/Roof.fbx" id="1_3tvjk"]
+
+[node name="Roof" unique_id=1563139199 instance=ExtResource("1_3tvjk")]
+
+[node name="Roof_001" parent="." index="0" unique_id=259042512]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -0.000248909, 0.0037664175, 0.00027304888)
