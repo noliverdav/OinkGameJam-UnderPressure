@@ -58,13 +58,11 @@ func Check_CleanEnemiesWave():
 		checkWave_IncreaseEnemies()
 
 
-func _unhandled_input(event):
+func _input(event: InputEvent) -> void:
 	if minimapCamera.current:
 		if event is InputEventMouseMotion:
-			print(head.rotation_degrees)
 			head.rotate_z(deg_to_rad(-event.relative.x * 0.002))
 			head.rotate_x(deg_to_rad(-event.relative.y * 0.002))
-
 
 var playerCamera:Camera3D
 @export var minimapCamera:Camera3D

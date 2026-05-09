@@ -43,6 +43,8 @@ func _ready():
 	stand_height = collision_shape.shape.height
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	dead = false
+	GameState.player_node = self
+
 
 
 func _physics_process(delta):
