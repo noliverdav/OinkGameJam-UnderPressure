@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://pavmh5ybknl1"]
+
+[ext_resource type="Script" uid="uid://bg1058yj47cb0" path="res://interactuable_missile_cannon.gd" id="1_sghqk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6jxix"]
+size = Vector3(1, 0.37695313, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_rk7jv"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_s2jhl"]
+
+[node name="InteractuableMissileCannon" type="Area3D" unique_id=702161493 node_paths=PackedStringArray("missile_mesh")]
+script = ExtResource("1_sghqk")
+missile_mesh = NodePath("MissilLoaded")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=999006499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.43709046, 0)
+shape = SubResource("BoxShape3D_6jxix")
+
+[node name="Cannon" type="MeshInstance3D" parent="." unique_id=1755722139]
+mesh = SubResource("TorusMesh_rk7jv")
+
+[node name="MissilLoaded" type="MeshInstance3D" parent="." unique_id=1720320546]
+transform = Transform3D(1, 0, 0, 0, 0.032830954, 0, 0, 0, 1, 0, -0.107874155, 0)
+visible = false
+mesh = SubResource("CylinderMesh_s2jhl")

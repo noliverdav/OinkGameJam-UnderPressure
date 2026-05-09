@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dxki41ba8y3aa"]
+
+[ext_resource type="Script" uid="uid://b8hk1qtijxm54" path="res://enemiesManager.gd" id="1_ttd1e"]
+[ext_resource type="PackedScene" uid="uid://d3m6c4je48grl" path="res://Enemy.tscn" id="2_jahtd"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_jahtd"]
+
+[node name="Node3D" type="Node3D" unique_id=799756806]
+script = ExtResource("1_ttd1e")
+enemy_scene = ExtResource("2_jahtd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1972898072]
+transform = Transform3D(20, 0, 0, 0, -8.742278e-07, -20, 0, 20, -8.742278e-07, 0, 0, 0)
+mesh = SubResource("QuadMesh_jahtd")
+
+[node name="EnemyCoords" type="Label3D" parent="." unique_id=1951989806]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 14.817205)
+text = "(0,0,0)"
+font_size = 1000

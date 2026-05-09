@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://doq2rnofhhx0b"]
+
+[ext_resource type="Texture2D" uid="uid://duy4tolyyuics" path="res://Models/Kitchen/Fridge/Texture/Kitchen_Fridge_64.jpg" id="1_8123p"]
+
+[resource]
+resource_name = "Kitchen_Fridge_TEX"
+albedo_texture = ExtResource("1_8123p")
+emission_enabled = true

@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://7efbiglmlt4d"]
+
+[ext_resource type="Script" uid="uid://dk8js7fuahsc2" path="res://interactuable_escotilla.gd" id="1_m127l"]
+[ext_resource type="Script" uid="uid://crjdp4pqalnli" path="res://Escotilla_Logica.gd" id="1_qnup6"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_s2akp"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_m127l"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qnup6"]
+height = 3.8945847
+radius = 0.57958984
+
+[sub_resource type="Animation" id="Animation_61ht2"]
+resource_name = "Closed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PivotPuerta:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5707964, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1uecj"]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PivotPuerta:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5707964, -2.121727, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1shcc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PivotPuerta:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5707964, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o8880"]
+_data = {
+&"Closed": SubResource("Animation_61ht2"),
+&"Open": SubResource("Animation_1uecj"),
+&"RESET": SubResource("Animation_1shcc")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m127l"]
+animation = &"Closed"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qnup6"]
+animation = &"Open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s2akp"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_61ht2"]
+xfade_time = 1.0
+switch_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1uecj"]
+xfade_time = 1.0
+switch_mode = 1
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_1shcc"]
+states/Closed/node = SubResource("AnimationNodeAnimation_m127l")
+states/Closed/position = Vector2(430, 96)
+states/Open/node = SubResource("AnimationNodeAnimation_qnup6")
+states/Open/position = Vector2(615, 96)
+states/Start/position = Vector2(223, 100)
+transitions = ["Start", "Closed", SubResource("AnimationNodeStateMachineTransition_s2akp"), "Closed", "Open", SubResource("AnimationNodeStateMachineTransition_61ht2"), "Open", "Closed", SubResource("AnimationNodeStateMachineTransition_1uecj")]
+
+[node name="InteractuableEscotilla" type="Node3D" unique_id=2113646208]
+script = ExtResource("1_qnup6")
+
+[node name="PivotPuerta" type="Node3D" parent="." unique_id=1919673624]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.813788e-09, -0.9999999, 0, 0.11012664, -4.3711385e-08, -0.542, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PivotPuerta" unique_id=554031439]
+transform = Transform3D(1, 0, 0, 0, 1.0000002, -5.684342e-14, 0, 0, 1, 0.5, 0, 0)
+mesh = SubResource("CylinderMesh_s2akp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PivotPuerta/MeshInstance3D" unique_id=1825908988]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PivotPuerta/MeshInstance3D/StaticBody3D" unique_id=1276300839]
+shape = SubResource("CylinderShape3D_m127l")
+
+[node name="Area3D" type="Area3D" parent="PivotPuerta/MeshInstance3D" unique_id=1813553044]
+script = ExtResource("1_m127l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PivotPuerta/MeshInstance3D/Area3D" unique_id=224958423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.30956483, 3.5527137e-15)
+shape = SubResource("CylinderShape3D_qnup6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1313573859]
+libraries/ = SubResource("AnimationLibrary_o8880")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=730764646]
+tree_root = SubResource("AnimationNodeStateMachine_1shcc")
+anim_player = NodePath("../AnimationPlayer")

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bvhjskpfny32v"]
+
+[ext_resource type="Texture2D" uid="uid://cbwxpl2q2nm4o" path="res://Models/Ventilation/Textures/Ventilation_TEX_64.jpg" id="1_js2gi"]
+
+[resource]
+resource_name = "VentilationTube_TEX"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_js2gi")
+emission_enabled = true

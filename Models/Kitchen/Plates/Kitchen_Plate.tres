@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://biron18wxjoj4"]
+
+[ext_resource type="Texture2D" uid="uid://ctcnrxihsv5dg" path="res://Models/Kitchen/Plates/Textures/Plate_highDirty.jpg" id="1_6xono"]
+
+[resource]
+resource_name = "Kitchen_Plate"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_6xono")
+emission_enabled = true

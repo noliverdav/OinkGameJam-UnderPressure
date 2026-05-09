@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://q4pv5e1x7gfb"]
+
+[ext_resource type="Texture2D" uid="uid://navq2h5af0ap" path="res://Models/Electrical/Electrical Box/Textures/Circuitbox01_TEX_64.jpg" id="1_jikmf"]
+
+[resource]
+resource_name = "Circuitbox_TEX"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_jikmf")
+emission_enabled = true

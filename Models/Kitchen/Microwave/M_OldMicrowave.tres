@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b38qsqs7se157"]
+
+[ext_resource type="Texture2D" uid="uid://daafyhtoal71k" path="res://Models/Kitchen/Microwave/Texture/Microwave_64_TEX.jpg" id="1_8vu7e"]
+
+[resource]
+resource_name = "M_OldMicrowave"
+albedo_texture = ExtResource("1_8vu7e")
+emission_enabled = true

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bufj6i03xrrak"]
+
+[ext_resource type="Texture2D" uid="uid://crgs3c1priqry" path="res://Models/Beams/Texture/Metalbeam_64_TEX.png" id="1_arlnv"]
+
+[resource]
+resource_name = "Metalbeam_TEX"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_arlnv")
+emission_enabled = true
