@@ -1,11 +1,12 @@
 extends Interactable
 
 var loadState := false;
-signal fireSignal(coordx_value,coordy_value)
+signal fireSignal(coordx_value,coordy_value,coordz_value)
 
 @export var missile_mesh: Node3D
 @export var Coor_x_Node: InteractuablePerilla
 @export var Coor_Y_Node: InteractuablePerilla
+@export var Coor_Z_Node: InteractuablePerilla
 
 func interact(body):
 	
@@ -28,5 +29,5 @@ func fire():
 	#if door and door.is_open:
 		#return
 	loadState = false
-	fireSignal.emit(Coor_x_Node.current_degrees,Coor_Y_Node.current_degrees)
+	fireSignal.emit(Coor_x_Node.current_degrees,Coor_Y_Node.current_degrees,Coor_Z_Node.current_degrees)
 	update_visual()

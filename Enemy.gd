@@ -2,17 +2,19 @@ extends Node3D
 
 var coordX:=0
 var coordY:=0
+var coorDistance :=0
 @export var label: Label3D
 
 func _ready() -> void:
 	coordX = randi_range(-10, 10)
 	coordY = randi_range(-10, 10)
+	coorDistance = randi_range(0, 20)
 	position = Vector3(coordX,0,coordY)
 	if label:
-		label.text = "("+str(coordX) + " , "+str(coordY)+ ")"
+		label.text = "("+str(coordX) + " , "+str(coordY)+","+str(coorDistance)+ ")"
 	
-func check_hit(tx, ty) -> bool:
-	if tx == coordX and ty == coordY:
+func check_hit(tx, ty, td) -> bool:
+	if tx == coordX and ty == coordY and td == coorDistance:
 		return true
 	return false
 	

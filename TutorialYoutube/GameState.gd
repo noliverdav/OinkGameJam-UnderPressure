@@ -23,10 +23,14 @@ func set_value(key, value):
 	
 signal value_changed(key, value)
 
+var player_UI: Player_UI = null
+
+
 func nextWave():
 	var currentaWave = get_value("enemyCurrentWave")
 	var nextWave = currentaWave+1
 	set_value("enemyCurrentWave",  nextWave)
+	player_UI._updateEnemyWave(nextWave,get_value("enemyMaxWave"))
 
 var player_node: Player = null
 

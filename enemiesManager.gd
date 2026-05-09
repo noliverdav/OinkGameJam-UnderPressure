@@ -38,12 +38,12 @@ func checkWave_IncreaseEnemies():
 	spawnedEnemiesCounter = enemiesLimiter
 
 	
-func cannonFiredCheckEnemies(coordx,coordy):
-	print("fire: ", coordx," - ",coordy)
+func cannonFiredCheckEnemies(coordx,coordy,coordz):
+	print("fire: ", coordx," - ",coordy, " - ", coordz)
 	for enemy in enemies_list:
 		
 		if enemy.has_method("check_hit"):
-			var hit = enemy.check_hit(coordx, coordy)
+			var hit = enemy.check_hit(coordx, coordy,coordz)
 			
 			if hit:
 				enemies_list.erase(enemy)

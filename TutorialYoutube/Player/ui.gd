@@ -1,9 +1,12 @@
 extends Control
+class_name Player_UI
 
 @onready var hurt_overlay = $HurtOverlay
 @onready var health_bar_bg = $HealthBarBG
 @onready var health_bar = $HealthBar
 @onready var game_over = $GameOver
+@onready var enemyWaveUI = $WaveText
+
 
 var hurt_tween : Tween
 
@@ -12,7 +15,12 @@ func _ready():
 	health_bar.value = GameState.get_value("health")
 	health_bar_bg.value = health_bar.value
 	game_over.hide()
+	GameState.player_UI = self
 
+
+func _updateEnemyWave(curremtWave:int, maxWave:int):
+	enemyWaveUI.text = str("Wave: ",curremtWave,"/",maxWave)
+	
 
 #func _process(_delta):
 #	$KeyCounter.text = str(GameState.get_value("key"))
