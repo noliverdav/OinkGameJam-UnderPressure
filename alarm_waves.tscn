@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://620tjtrct5nv"]
+
+[ext_resource type="Script" uid="uid://di7xlehxs2spk" path="res://alarm_wave.gd" id="1_poiki"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pilpo"]
+
+[sub_resource type="Animation" id="Animation_gk224"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/SpotLight3D:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.24705882, 0.8509804, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/SpotLight3D2:light_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.24705882, 0.8509804, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4hwdl"]
+resource_name = "WaveActive"
+length = 2.0000033
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/SpotLight3D:light_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.13725491, 0.13725491, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/SpotLight3D2:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.13725491, 0.13725491, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(6.2831855, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bkugv"]
+resource_name = "Wave_Safe"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/SpotLight3D:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.24705882, 0.8509804, 0, 1), Color(0.24705882, 0.8509804, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/SpotLight3D2:light_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.24705882, 0.8509804, 0, 1), Color(0.24705882, 0.8509804, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_obcn6"]
+_data = {
+&"RESET": SubResource("Animation_gk224"),
+&"WaveActive": SubResource("Animation_4hwdl"),
+&"Wave_Safe": SubResource("Animation_bkugv")
+}
+
+[node name="Alarm" type="Node3D" unique_id=69876843]
+script = ExtResource("1_poiki")
+
+[node name="Pivot" type="Node3D" parent="." unique_id=1518571492]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Pivot" unique_id=468893514]
+light_color = Color(0.24705882, 0.8509804, 0, 1)
+light_energy = 13.076
+light_size = 0.13
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Pivot" unique_id=1565795535]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
+light_color = Color(0.24705882, 0.8509804, 0, 1)
+light_energy = 13.076
+light_size = 0.13
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot" unique_id=327575153]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_pilpo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1583705913]
+libraries/ = SubResource("AnimationLibrary_obcn6")
