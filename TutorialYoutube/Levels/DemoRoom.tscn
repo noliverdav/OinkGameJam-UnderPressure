@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://ctihsrkqrauwo" path="res://Interactable_missil_launch.tscn" id="18_kg1ut"]
 [ext_resource type="Script" uid="uid://cwtptfinjhiav" path="res://Interactable_LauncMissilButton.gd" id="19_ciqxv"]
 [ext_resource type="PackedScene" uid="uid://dxki41ba8y3aa" path="res://Minimap.tscn" id="20_iy0sg"]
+[ext_resource type="PackedScene" uid="uid://620tjtrct5nv" path="res://alarm_waves.tscn" id="22_8t3af"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iy0sg"]
 render_priority = 0
@@ -274,6 +275,10 @@ cannon = NodePath("../InteractuableMissileCannon2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.637772, 6.424203)
 light_energy = 10.082
 shadow_enabled = true
+
+[node name="Alarm" parent="." unique_id=69876843 node_paths=PackedStringArray("enemyManager") instance=ExtResource("22_8t3af")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.963132, 2.441566, 0)
+enemyManager = NodePath("../Node3D")
 
 [connection signal="interacted" from="Button" to="Door" method="toggle"]
 [connection signal="interacted" from="Button2" to="MovingPlatform" method="toggle"]

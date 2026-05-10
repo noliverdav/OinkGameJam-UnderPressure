@@ -137,13 +137,13 @@ script = ExtResource("1_poiki")
 [node name="SpotLight3D" type="SpotLight3D" parent="Pivot" unique_id=468893514]
 light_color = Color(0.24705882, 0.8509804, 0, 1)
 light_energy = 13.076
-light_size = 0.13
+light_size = 0.45
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Pivot" unique_id=1565795535]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
 light_color = Color(0.24705882, 0.8509804, 0, 1)
 light_energy = 13.076
-light_size = 0.13
+light_size = 0.45
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot" unique_id=327575153]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
