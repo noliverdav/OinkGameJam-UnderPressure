@@ -1,6 +1,10 @@
 extends Node
+class_name enemiesManager
 @export var enemy_scene: PackedScene
-@export var spawn_interval := 5.0
+@export var spawn_interval := 10.0
+@export var time_until_next_wave := 10.0
+var wave_timer := 0.0 
+
 @export var cannon: Node3D
 var enemiesLimiter:=1
 var spawnedEnemiesCounter:=0
@@ -16,12 +20,16 @@ var spawn_timer := 0.0
 
 func _process(delta):
 	checkEnemySelected()
-	spawn_timer += delta
 	
-	if spawn_timer >= spawn_interval and enemies_list.size()<enemiesLimiter and spawnedEnemiesCounter>0:
-		spawn_enemy()
-		spawn_timer = 0.0
-	
+	if Check_CleanEnemiesWave():
+		nextWaveTimer(delta)
+	else:
+		spawn_timer += delta
+		
+		if spawn_timer >= spawn_interval and enemies_list.size()<enemiesLimiter and spawnedEnemiesCounter>0:
+			spawn_enemy()
+			spawn_timer = 0.0
+		
 	
 func spawn_enemy():
 	spawnedEnemiesCounter-=1
@@ -45,9 +53,8 @@ func checkEnemySelected():
 			oneEnemySelected = true;
 			coordsMinimap.text = "("+str(enemy.getCoord_X()) + " , "+str(enemy.getCoord_Y())+","+str(enemy.getCoord_Z())+ ")"
 			break
-	
 	if(!oneEnemySelected):
-		coordsMinimap.text = "(***)"	
+		coordsMinimap.text = "(***)"
 	
 func cannonFiredCheckEnemies(coordx,coordy,coordz):
 	print("fire: ", coordx," - ",coordy, " - ", coordz)
@@ -60,14 +67,22 @@ func cannonFiredCheckEnemies(coordx,coordy,coordz):
 				enemies_list.erase(enemy)
 				enemy.Destroy()
 				spawn_timer = 0
-				Check_CleanEnemiesWave()
+				#Check_CleanEnemiesWave()
 				break
 
-func Check_CleanEnemiesWave():
-	if(enemies_list.is_empty()):
-		GameState.nextWave()
-		checkWave_IncreaseEnemies()
+func nextWaveTimer(delta):
+	wave_timer += delta
+	if wave_timer >= time_until_next_wave:
+		Start_Next_Wave()
+		wave_timer = 0.0 
 
+func Check_CleanEnemiesWave() -> bool:
+	return enemies_list.is_empty() and spawnedEnemiesCounter<=0
+		
+func Start_Next_Wave():
+	GameState.nextWave()
+	checkWave_IncreaseEnemies()
+	spawn_timer =spawn_interval
 
 #func _input(event: InputEvent) -> void:
 #	if minimapCamera.current:
