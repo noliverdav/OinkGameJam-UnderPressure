@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ce1y5rr4cyv0h"]
+
+[ext_resource type="Texture2D" uid="uid://byhaw8ecx7x2c" path="res://Models/Perchero/Assets_Group_02_128.jpg" id="1_hilrr"]
+
+[resource]
+resource_name = "Material.001"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_hilrr")
+emission_enabled = true

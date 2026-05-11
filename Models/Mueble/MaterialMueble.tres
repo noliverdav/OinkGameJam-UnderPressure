@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://oheuv2gqld5o"]
+
+[ext_resource type="Texture2D" uid="uid://b0pypnucwfda" path="res://Models/Mueble/Assets_Group_02_128.jpg" id="1_0h62d"]
+
+[resource]
+resource_name = "Material.001"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_0h62d")
+emission_enabled = true

@@ -48,6 +48,16 @@
 [ext_resource type="PackedScene" uid="uid://cyts0jt4t2b7h" path="res://MissilSupply.tscn" id="47_402hl"]
 [ext_resource type="PackedScene" uid="uid://cavx0y1n3a6ss" path="res://Interactuable_Perilla.tscn" id="48_jjcgm"]
 [ext_resource type="PackedScene" uid="uid://8srvmtn68smd" path="res://Models/Ammo Box/Ammobox.fbx" id="48_vdgyg"]
+[ext_resource type="PackedScene" uid="uid://c5tptaxsrlmhc" path="res://Models/TanqueOxigeno/TanqueOxigeno.fbx" id="49_ns7an"]
+[ext_resource type="PackedScene" uid="uid://dh4lqpmpkmtr5" path="res://Models/Tablones/Tablon_Corto.fbx" id="50_7acwd"]
+[ext_resource type="PackedScene" uid="uid://cti1mi51nl2xw" path="res://Models/Tablones/Tablon_Largo.fbx" id="51_7e5i0"]
+[ext_resource type="PackedScene" uid="uid://d4kbb1r24fj3u" path="res://Models/Radar/Radar_Base/Base_Radar.fbx" id="52_mrb3d"]
+[ext_resource type="PackedScene" uid="uid://dmapfj4srnken" path="res://Models/Radar/Radar_Coord/Coordenadas_Radar.fbx" id="53_kwwbd"]
+[ext_resource type="PackedScene" uid="uid://bgg4h8wtai1h8" path="res://Models/Radar/Radar_Screen/Pantalla_Radar.fbx" id="54_a26oj"]
+[ext_resource type="PackedScene" uid="uid://cijh3ltmso7lx" path="res://Models/Perchero/Perchero_01.fbx" id="55_bpuac"]
+[ext_resource type="PackedScene" uid="uid://chrexmdb0lb4f" path="res://Models/Papelera/Papelera.fbx" id="56_rthtk"]
+[ext_resource type="PackedScene" uid="uid://bsjste7f8droq" path="res://Models/Mueble/Mueble_01.fbx" id="57_m5uuo"]
+[ext_resource type="PackedScene" uid="uid://pomlkrb07yeh" path="res://Models/Manguera/Manguera.fbx" id="58_klyew"]
 
 [sub_resource type="Environment" id="Environment_54q6p"]
 ambient_light_source = 2
@@ -873,3 +883,33 @@ transform = Transform3D(-0.14805314, 0, 0.7861808, 0, 0.79999995, 0, -0.7861808,
 
 [node name="Ammobox2" parent="." unique_id=24700885 instance=ExtResource("48_vdgyg")]
 transform = Transform3D(0.013598986, 0, -0.79988444, 0, 0.79999995, 0, 0.79988444, 0, 0.013598986, 2.1789339, 0.09939158, 1.2876543)
+
+[node name="TanqueOxigeno" parent="." unique_id=1401177553 instance=ExtResource("49_ns7an")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.039567, 0, 4.7673564)
+
+[node name="Tablon_Corto" parent="." unique_id=697830519 instance=ExtResource("50_7acwd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.131509, 0, 6.159487)
+
+[node name="Tablon_Largo" parent="." unique_id=1232553983 instance=ExtResource("51_7e5i0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6557045, 0, 7.1406713)
+
+[node name="Base_Radar" parent="." unique_id=386917755 instance=ExtResource("52_mrb3d")]
+transform = Transform3D(-0.08185154, 0, 0.9966447, 0, 1, 0, -0.9966447, 0, -0.08185154, -10.348438, 0, 3.1845741)
+
+[node name="Coordenadas_Radar" parent="." unique_id=952981707 instance=ExtResource("53_kwwbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.932144, 0, 2.0413918)
+
+[node name="Pantalla_Radar" parent="." unique_id=229860868 instance=ExtResource("54_a26oj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85958, 0, 4.271574)
+
+[node name="Perchero_01" parent="." unique_id=514245631 instance=ExtResource("55_bpuac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.817874, 0, 4.753568)
+
+[node name="Papelera" parent="." unique_id=517703962 instance=ExtResource("56_rthtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.932827, 0, 5.263283)
+
+[node name="Mueble_01" parent="." unique_id=449451484 instance=ExtResource("57_m5uuo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7006526, 0, 3.7009976)
+
+[node name="Manguera" parent="." unique_id=2003291325 instance=ExtResource("58_klyew")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2741385, 0, 5.1797056)

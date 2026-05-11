@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dw1oy6ucad2me"]
+
+[ext_resource type="Texture2D" uid="uid://pxfx7ktsvo0f" path="res://Models/Papelera/Assets_Group_01_128.jpg" id="1_8g8i4"]
+
+[resource]
+resource_name = "Material.001"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_8g8i4")
+emission_enabled = true
