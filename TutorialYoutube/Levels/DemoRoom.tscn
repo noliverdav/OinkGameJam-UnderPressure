@@ -220,65 +220,67 @@ item_id = "GRAPE"
 transform = Transform3D(0.0521439, 0, -0.998639, 0, 1, 0, 0.998639, 0, 0.0521439, 18.4605, 0, 11.8898)
 item_id = "MANGO"
 
-[node name="InteractuablePerilla" parent="." unique_id=1909881583 instance=ExtResource("14_wi8fs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6844795, 2.774596, 10.692182)
-
-[node name="InteractuablePerilla2" parent="." unique_id=133983645 instance=ExtResource("14_wi8fs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.304825, 2.774596, 10.692182)
-
-[node name="InteractuablePerilla3" parent="." unique_id=418431382 instance=ExtResource("14_wi8fs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7079606, 2.774596, 10.692182)
-min = 0
-max = 20
-
 [node name="InteractuableEscotilla" parent="." unique_id=41692124 instance=ExtResource("15_cbyn2")]
 transform = Transform3D(-1.3831048, 1.2091486e-07, 0, -1.2091486e-07, -1.3831048, 0, 0, 0, 1.3831048, 6.2609253, 2.0331635, 5.009647)
 
 [node name="InteractuableMissileCannon" parent="." unique_id=702161493 instance=ExtResource("16_pa3lv")]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 6.261, 2.033, 4.944192)
 
-[node name="MissilSupply" parent="." unique_id=558662085 instance=ExtResource("17_ov6fa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18590817, 0.49999762, 6.704252)
-
-[node name="InteractuableMissileCannon2" parent="." unique_id=504153753 node_paths=PackedStringArray("Coor_x_Node", "Coor_Y_Node", "Coor_Z_Node") instance=ExtResource("16_pa3lv")]
-transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 6.2576227, 1.3239827, 14.721932)
-Coor_x_Node = NodePath("../InteractuablePerilla")
-Coor_Y_Node = NodePath("../InteractuablePerilla2")
-Coor_Z_Node = NodePath("../InteractuablePerilla3")
-
-[node name="InteractuableEscotilla2" parent="InteractuableMissileCannon2" unique_id=2113646208 instance=ExtResource("15_cbyn2")]
-transform = Transform3D(-1.2091486e-07, -1.3831048, 6.045743e-08, -6.0457424e-08, 6.045744e-08, 1.3831048, -1.3831048, 1.2091486e-07, -6.045743e-08, 0, 0, 0)
-
 [node name="Interactable_MissilLaunch" parent="." unique_id=911175903 instance=ExtResource("18_kg1ut")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.661921, -0.40397954, 8.31204)
 visible = false
-
-[node name="Area3D" type="Area3D" parent="." unique_id=104140753 node_paths=PackedStringArray("cannon", "door")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.055313, 1.799166, 14.596984)
-script = ExtResource("19_ciqxv")
-cannon = NodePath("../InteractuableMissileCannon2")
-door = NodePath("../InteractuableMissileCannon2/InteractuableEscotilla2")
-prompt_message = "Fire"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1131093671]
-shape = SubResource("BoxShape3D_iy0sg")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=391521094]
-mesh = SubResource("BoxMesh_3mrky")
-
-[node name="Node3D" parent="." unique_id=799756806 node_paths=PackedStringArray("cannon") instance=ExtResource("20_iy0sg")]
-transform = Transform3D(0.030433226, 0.039671388, 1.7340913e-09, 0, -2.1855695e-09, 0.05, 0.039671388, -0.030433226, -1.3302786e-09, 5.148651, 2.8651981, 1.7235727)
-spawn_interval = 0.1
-cannon = NodePath("../InteractuableMissileCannon2")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1334000644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.637772, 6.424203)
 light_energy = 10.082
 shadow_enabled = true
 
-[node name="Alarm" parent="." unique_id=69876843 node_paths=PackedStringArray("enemyManager") instance=ExtResource("22_8t3af")]
+[node name="Interactuables" type="Node3D" parent="." unique_id=997441942]
+
+[node name="Alarm" parent="Interactuables" unique_id=69876843 node_paths=PackedStringArray("enemyManager") instance=ExtResource("22_8t3af")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.963132, 2.441566, 0)
-enemyManager = NodePath("../Node3D")
+enemyManager = NodePath("../Minimap")
+
+[node name="Minimap" parent="Interactuables" unique_id=799756806 node_paths=PackedStringArray("cannon") instance=ExtResource("20_iy0sg")]
+transform = Transform3D(0.030433226, 0.039671388, 1.7340913e-09, 0, -2.1855695e-09, 0.05, 0.039671388, -0.030433226, -1.3302786e-09, 5.148651, 2.8651981, 1.7235727)
+spawn_interval = 0.1
+cannon = NodePath("../InteractuableMissileCannon2")
+
+[node name="MisilLauncher" type="Area3D" parent="Interactuables" unique_id=104140753 node_paths=PackedStringArray("cannon", "door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.055313, 1.799166, 14.596984)
+script = ExtResource("19_ciqxv")
+cannon = NodePath("../InteractuableMissileCannon2")
+door = NodePath("../InteractuableMissileCannon2/InteractuableEscotilla2")
+prompt_message = "Fire"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactuables/MisilLauncher" unique_id=1131093671]
+shape = SubResource("BoxShape3D_iy0sg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactuables/MisilLauncher" unique_id=391521094]
+mesh = SubResource("BoxMesh_3mrky")
+
+[node name="InteractuableMissileCannon2" parent="Interactuables" unique_id=504153753 node_paths=PackedStringArray("Coor_x_Node", "Coor_Y_Node", "Coor_Z_Node") instance=ExtResource("16_pa3lv")]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 6.2576227, 1.3239827, 14.721932)
+Coor_x_Node = NodePath("../InteractuablePerilla")
+Coor_Y_Node = NodePath("../InteractuablePerilla2")
+Coor_Z_Node = NodePath("../InteractuablePerilla3")
+
+[node name="InteractuableEscotilla2" parent="Interactuables/InteractuableMissileCannon2" unique_id=2113646208 instance=ExtResource("15_cbyn2")]
+transform = Transform3D(-1.2091486e-07, -1.3831048, 6.045743e-08, -6.0457424e-08, 6.045744e-08, 1.3831048, -1.3831048, 1.2091486e-07, -6.045743e-08, 0, 0, 0)
+
+[node name="MissilSupply" parent="Interactuables" unique_id=558662085 instance=ExtResource("17_ov6fa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18590817, 0.49999762, 6.704252)
+
+[node name="InteractuablePerilla" parent="Interactuables" unique_id=1909881583 instance=ExtResource("14_wi8fs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6844795, 2.774596, 10.692182)
+
+[node name="InteractuablePerilla2" parent="Interactuables" unique_id=133983645 instance=ExtResource("14_wi8fs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.304825, 2.774596, 10.692182)
+
+[node name="InteractuablePerilla3" parent="Interactuables" unique_id=418431382 instance=ExtResource("14_wi8fs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7079606, 2.774596, 10.692182)
+min = 0
+max = 20
 
 [connection signal="interacted" from="Button" to="Door" method="toggle"]
 [connection signal="interacted" from="Button2" to="MovingPlatform" method="toggle"]
