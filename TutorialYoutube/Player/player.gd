@@ -3,7 +3,7 @@ class_name Player
 
 
 @export_subgroup("Movement")
-@export var speed = 8.0
+@export var speed = 3.0
 @export var accel = 16.0
 @export var jump = 8.0
 
@@ -58,14 +58,14 @@ func _physics_process(delta):
 	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-	elif moving:
-		if Input.is_action_just_pressed("jump"):
-			velocity.y = jump
-		elif Input.is_action_pressed("crouch") or top_cast.is_colliding():
-			move_speed = crouch_speed
-			crouch(delta)
-		else:
-			crouch(delta, true)
+	#elif moving:
+		#if Input.is_action_just_pressed("jump"):
+			#.y = jump
+		#elif Input.is_action_pressed("crouch") or top_cast.is_colliding():
+			#move_speed = crouch_speed
+			#crouch(delta)
+		#else:
+			#crouch(delta, true)
 
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
