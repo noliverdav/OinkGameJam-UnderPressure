@@ -874,7 +874,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.05417956, 0, 0, 0)
 mesh = SubResource("BoxMesh_7skyi")
 
 [node name="InteractuableMissileCannon2" parent="Interactuables" unique_id=702161493 node_paths=PackedStringArray("Coor_x_Node", "Coor_Y_Node", "Coor_Z_Node") instance=ExtResource("45_qyey3")]
-transform = Transform3D(5.7320557e-16, 1.3113415e-08, 0.29999998, 0.28791952, -0.0842754, 3.683794e-09, 0.0842754, 0.28791952, -1.2585361e-08, 6.8058453, 1.0987428, -9.449991)
+transform = Transform3D(5.7320557e-16, 1.3113415e-08, 0.29999998, 0.28791952, -0.0842754, 3.683794e-09, 0.0842754, 0.28791952, -1.2585361e-08, 6.8058453, 1.0879289, -9.413046)
 Coor_x_Node = NodePath("../InteractuablePerilla")
 Coor_Y_Node = NodePath("../InteractuablePerilla2")
 Coor_Z_Node = NodePath("../InteractuablePerilla3")
