@@ -40,9 +40,9 @@ func _physics_process(_delta):
 
 	current_interactable = null
 	
-	if not enemy_found and pointedEnemy:
-		stop_lookinEnemyTimer += _delta
-		if(stop_lookinEnemyTimer>stop_lokkingEnemyTimer_limit):
-			pointedEnemy.Set_selectedEnemy(false)
-			pointedEnemy = null
-			stop_lookinEnemyTimer=0
+	#if not enemy_found and pointedEnemy:
+		# += _delta
+		#if(stop_lookinEnemyTimer>stop_lokkingEnemyTimer_limit):
+			#pointedEnemy.Set_selectedEnemy(false)
+			#pointedEnemy = null
+			#stop_lookinEnemyTimer=0

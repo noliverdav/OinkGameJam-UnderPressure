@@ -54,7 +54,7 @@ func checkEnemySelected():
 			coordsMinimap.text = "("+str(enemy.getCoord_X()) + " , "+str(enemy.getCoord_Y())+","+str(enemy.getCoord_Z())+ ")"
 			break
 	if(!oneEnemySelected):
-		coordsMinimap.text = "(***)"
+		coordsMinimap.text = ""
 	
 func cannonFiredCheckEnemies(coordx,coordy,coordz):
 	print("fire: ", coordx," - ",coordy, " - ", coordz)

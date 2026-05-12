@@ -48,9 +48,4 @@ func update_visual():
 		label.text = str(current_degrees) + "°"
 	if PerillaMesh:
 		var target_rotation = deg_to_rad(-_internal_degrees * 30)
-		
-		PerillaMesh.rotation.y = lerp_angle(
-			PerillaMesh.rotation.y,
-			target_rotation,
-			0.15
-		)
+		PerillaMesh.rotation.y = lerp_angle(PerillaMesh.rotation.y,target_rotation,0.15)
