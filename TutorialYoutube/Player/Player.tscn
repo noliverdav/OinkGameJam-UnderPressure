@@ -98,6 +98,7 @@ grow_vertical = 2
 texture = ExtResource("2_ehnts")
 
 [node name="HealthBarBG" type="ProgressBar" parent="UI" unique_id=1252450143]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -113,6 +114,7 @@ value = 80.0
 show_percentage = false
 
 [node name="HealthBar" type="ProgressBar" parent="UI" unique_id=1778751128]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -128,6 +130,7 @@ value = 70.0
 show_percentage = false
 
 [node name="WaveText" type="Label" parent="UI" unique_id=989810375]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
