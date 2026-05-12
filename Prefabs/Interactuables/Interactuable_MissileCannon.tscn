@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://pavmh5ybknl1"]
 
-[ext_resource type="Script" uid="uid://bg1058yj47cb0" path="res://interactuable_missile_cannon.gd" id="1_sghqk"]
+[ext_resource type="Script" uid="uid://bg1058yj47cb0" path="res://Prefabs/Interactuables/interactuable_missile_cannon.gd" id="1_sghqk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6jxix"]
 size = Vector3(1, 0.37695313, 1)

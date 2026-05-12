@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3m6c4je48grl"]
 
-[ext_resource type="Script" uid="uid://d4ffmbg5t5b4m" path="res://Enemy.gd" id="1_tt7e2"]
+[ext_resource type="Script" uid="uid://d4ffmbg5t5b4m" path="res://Prefabs/Interactuables/Enemy.gd" id="1_tt7e2"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_tt7e2"]
 

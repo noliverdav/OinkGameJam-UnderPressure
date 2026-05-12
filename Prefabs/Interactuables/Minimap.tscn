@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dxki41ba8y3aa"]
 
-[ext_resource type="Script" uid="uid://b8hk1qtijxm54" path="res://enemiesManager.gd" id="1_ttd1e"]
-[ext_resource type="PackedScene" uid="uid://d3m6c4je48grl" path="res://Enemy.tscn" id="2_jahtd"]
+[ext_resource type="Script" uid="uid://b8hk1qtijxm54" path="res://Prefabs/Interactuables/enemiesManager.gd" id="1_ttd1e"]
+[ext_resource type="PackedScene" uid="uid://d3m6c4je48grl" path="res://Prefabs/Interactuables/Enemy.tscn" id="2_jahtd"]
+[ext_resource type="FontFile" uid="uid://b0ymmh53belyr" path="res://fonts/PixelatedEleganceRegular-ovawB.ttf" id="3_cn7vw"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_jahtd"]
 
@@ -22,4 +23,5 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0
 render_priority = 1
 outline_render_priority = 0
 text = "(0,0,0)"
+font = ExtResource("3_cn7vw")
 font_size = 1000

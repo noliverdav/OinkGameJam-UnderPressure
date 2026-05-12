@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cavx0y1n3a6ss"]
 
-[ext_resource type="Script" uid="uid://blh1t0w5b75y6" path="res://interactuable_perilla.gd" id="1_3suqk"]
+[ext_resource type="Script" uid="uid://blh1t0w5b75y6" path="res://Prefabs/Interactuables/interactuable_perilla.gd" id="1_3suqk"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qtn2q"]
 

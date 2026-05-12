@@ -15,6 +15,7 @@ func _ready() -> void:
 	position = Vector3(coordX,0,coordY)
 	if label:
 		label.text = "("+str(coordX) + " , "+str(coordY)+","+str(coorDistance)+ ")"
+	ChangeColorSelected();
 	
 func check_hit(tx, ty, td) -> bool:
 	if tx == coordX and ty == coordY and td == coorDistance:
