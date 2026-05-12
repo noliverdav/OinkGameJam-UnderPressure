@@ -14,7 +14,7 @@ script = ExtResource("1_sghqk")
 missile_mesh = NodePath("MissilLoaded")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=999006499]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.43709046, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.054750204, 0)
 shape = SubResource("BoxShape3D_6jxix")
 
 [node name="Cannon" type="MeshInstance3D" parent="." unique_id=1755722139]
