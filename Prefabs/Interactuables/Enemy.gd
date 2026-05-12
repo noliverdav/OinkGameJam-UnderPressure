@@ -7,6 +7,10 @@ var coorDistance :=0
 var selectedInMinimap:bool
 @export var label: Label3D
 
+@export var materialSelected:Material;
+@export var materialUnselected:Material;
+
+
 
 func _ready() -> void:
 	coordX = randi_range(-10, 10)
@@ -15,6 +19,7 @@ func _ready() -> void:
 	position = Vector3(coordX,0,coordY)
 	if label:
 		label.text = "("+str(coordX) + " , "+str(coordY)+","+str(coorDistance)+ ")"
+	ChangeColorSelected();
 	
 func check_hit(tx, ty, td) -> bool:
 	if tx == coordX and ty == coordY and td == coorDistance:
@@ -24,7 +29,6 @@ func check_hit(tx, ty, td) -> bool:
 func Destroy():
 	queue_free()
 
-#tomado desde Signals
 func _on_attack_timer_timeout() -> void:
 	pass # Replace with function body.
 	GameState.take_damage(10) 
@@ -39,9 +43,9 @@ func get_selectedEnemy() -> bool:
 func ChangeColorSelected():
 	var material = $MeshInstance3D.get_active_material(0)
 	if(get_selectedEnemy()):
-		material.albedo_color = Color(0, 1, 0)
+		$MeshInstance3D.set_surface_override_material(0, materialSelected)	
 	else:
-		material.albedo_color = Color(1, 0, 0)
+		$MeshInstance3D.set_surface_override_material(0, materialUnselected)
 		
 
 

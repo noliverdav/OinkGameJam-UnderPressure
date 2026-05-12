@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://7efbiglmlt4d"]
 
-[ext_resource type="Script" uid="uid://dk8js7fuahsc2" path="res://interactuable_escotilla.gd" id="1_m127l"]
-[ext_resource type="Script" uid="uid://crjdp4pqalnli" path="res://Escotilla_Logica.gd" id="1_qnup6"]
+[ext_resource type="Script" uid="uid://dk8js7fuahsc2" path="res://Prefabs/Interactuables/interactuable_escotilla.gd" id="1_m127l"]
+[ext_resource type="Script" uid="uid://crjdp4pqalnli" path="res://Prefabs/Interactuables/Escotilla_Logica.gd" id="1_qnup6"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_s2akp"]
 

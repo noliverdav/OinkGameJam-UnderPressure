@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cavx0y1n3a6ss"]
 
-[ext_resource type="Script" uid="uid://blh1t0w5b75y6" path="res://interactuable_perilla.gd" id="1_3suqk"]
+[ext_resource type="Script" uid="uid://blh1t0w5b75y6" path="res://Prefabs/Interactuables/interactuable_perilla.gd" id="1_3suqk"]
+[ext_resource type="FontFile" uid="uid://b0ymmh53belyr" path="res://fonts/PixelatedEleganceRegular-ovawB.ttf" id="2_5ira2"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qtn2q"]
 
@@ -18,9 +19,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90501016, 0)
 render_priority = 1
 outline_render_priority = 0
 text = "0001"
+font = ExtResource("2_5ira2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1221498552]
 transform = Transform3D(1, 0, 0, 0, -3.959828e-09, -1, 0, 0.090590306, -4.371139e-08, 0, 0, 0)
+rotation_order = 0
 mesh = SubResource("CylinderMesh_qtn2q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1269627170]

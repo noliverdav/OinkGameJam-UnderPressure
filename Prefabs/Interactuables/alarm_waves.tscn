@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://620tjtrct5nv"]
 
-[ext_resource type="Script" uid="uid://di7xlehxs2spk" path="res://alarm_wave.gd" id="1_poiki"]
+[ext_resource type="Script" uid="uid://di7xlehxs2spk" path="res://Prefabs/Interactuables/alarm_wave.gd" id="1_poiki"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_pilpo"]
 

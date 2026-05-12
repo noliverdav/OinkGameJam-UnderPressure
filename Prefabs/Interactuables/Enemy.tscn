@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://d3m6c4je48grl"]
 
-[ext_resource type="Script" uid="uid://d4ffmbg5t5b4m" path="res://Enemy.gd" id="1_tt7e2"]
+[ext_resource type="Script" uid="uid://d4ffmbg5t5b4m" path="res://Prefabs/Interactuables/Enemy.gd" id="1_tt7e2"]
+[ext_resource type="Material" uid="uid://bvf3yvojmi5pf" path="res://selectedEnemy_Mat.tres" id="2_v645o"]
+[ext_resource type="Material" uid="uid://wh67yo1j53be" path="res://unselectedEnemy_Mat.tres" id="3_vwj8v"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_tt7e2"]
 
@@ -13,6 +15,8 @@ albedo_color = Color(1, 0.23529412, 0.30588236, 1)
 transform = Transform3D(-4.371139e-08, 1, -3.821371e-15, -4.371139e-08, 1.9106855e-15, 1, 1, 4.371139e-08, 4.371139e-08, 0, 0, 0)
 script = ExtResource("1_tt7e2")
 label = NodePath("coords_text")
+materialSelected = ExtResource("2_v645o")
+materialUnselected = ExtResource("3_vwj8v")
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=1161812418]
 wait_time = 30.0

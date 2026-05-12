@@ -46,16 +46,25 @@ func checkWave_IncreaseEnemies():
 		enemiesLimiter=3
 	spawnedEnemiesCounter = enemiesLimiter
 
+var enemySlected;
+
 func checkEnemySelected():
 	var oneEnemySelected = false
 	for enemy in enemies_list:
 		if(enemy.get_selectedEnemy()):
 			oneEnemySelected = true;
+			enemySlected = enemy
 			coordsMinimap.text = "("+str(enemy.getCoord_X()) + " , "+str(enemy.getCoord_Y())+","+str(enemy.getCoord_Z())+ ")"
 			break
 	if(!oneEnemySelected):
-		coordsMinimap.text = "(***)"
+		coordsMinimap.text = ""
+
+func getEnemySelected()->Enemy:
+	if is_instance_valid(enemySlected):
+		return enemySlected
 	
+	return null
+		
 func cannonFiredCheckEnemies(coordx,coordy,coordz):
 	print("fire: ", coordx," - ",coordy, " - ", coordz)
 	for enemy in enemies_list:
