@@ -15,6 +15,8 @@ prompt_action = "interact_perilla"
 
 [node name="grados_text" type="Label3D" parent="." unique_id=233868342]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90501016, 0)
+render_priority = 1
+outline_render_priority = 0
 text = "0001"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1221498552]

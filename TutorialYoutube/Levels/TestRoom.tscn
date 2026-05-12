@@ -118,6 +118,7 @@ shadow_mesh = SubResource("ArrayMesh_x2bmr")
 data = PackedVector3Array(0.00012108065, -0.009149385, -0.00012108088, 0.00012108065, -0.009149385, 0.00012108088, 0.00012108065, 0.009149385, 0.00012108088, 0.00012108065, 0.009149385, 0.00012108088, 0.00012108065, 0.009149385, -0.00012108088, 0.00012108065, -0.009149385, -0.00012108088, -0.00012108065, -0.009149385, -0.00012108088, -0.00012108065, -0.009149385, 0.00012108088, 0.00012108065, -0.009149385, 0.00012108088, 0.00012108065, -0.009149385, 0.00012108088, 0.00012108065, -0.009149385, -0.00012108088, -0.00012108065, -0.009149385, -0.00012108088, -0.00012108065, 0.009149385, -0.00012108088, -0.00012108065, 0.009149385, 0.00012108088, -0.00012108065, -0.009149385, 0.00012108088, -0.00012108065, -0.009149385, 0.00012108088, -0.00012108065, -0.009149385, -0.00012108088, -0.00012108065, 0.009149385, -0.00012108088, 0.00012108065, 0.009149385, -0.00012108088, 0.00012108065, 0.009149385, 0.00012108088, -0.00012108065, 0.009149385, 0.00012108088, -0.00012108065, 0.009149385, 0.00012108088, -0.00012108065, 0.009149385, -0.00012108088, 0.00012108065, 0.009149385, -0.00012108088, -0.00012108065, 0.009149385, 0.00012108088, 0.00012108065, 0.009149385, 0.00012108088, 0.00012108065, -0.009149385, 0.00012108088, 0.00012108065, -0.009149385, 0.00012108088, -0.00012108065, -0.009149385, 0.00012108088, -0.00012108065, 0.009149385, 0.00012108088, 0.00012108065, 0.009149385, -0.00012108088, -0.00012108065, 0.009149385, -0.00012108088, -0.00012108065, -0.009149385, -0.00012108088, -0.00012108065, -0.009149385, -0.00012108088, 0.00012108065, -0.009149385, -0.00012108088, 0.00012108065, 0.009149385, -0.00012108088)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_caa23"]
+size = Vector3(0.2, 0.2, 0.05417956)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7skyi"]
 
@@ -824,7 +825,7 @@ transform = Transform3D(-0.0113111995, -0.062945604, -0.9979529, 0.0060309307, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.072012)
 
 [node name="Alarm" parent="Interactuables" unique_id=69876843 node_paths=PackedStringArray("enemyManager") instance=ExtResource("42_vdgyg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.963132, 2.441566, 0)
+transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0, 1, 6.975935, 1.3418717, -8.239553)
 enemyManager = NodePath("../Minimap")
 
 [node name="Minimap" parent="Interactuables" unique_id=799756806 node_paths=PackedStringArray("cannon") instance=ExtResource("43_r8yrl")]
@@ -833,7 +834,7 @@ spawn_interval = 0.1
 cannon = NodePath("../InteractuableMissileCannon2")
 
 [node name="MisilLauncher" type="Area3D" parent="Interactuables" unique_id=146116298 node_paths=PackedStringArray("cannon", "door")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.250758, 0.24706507, -10.308985)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.590261, 0.77571785, -10.03651)
 script = ExtResource("44_pspqh")
 cannon = NodePath("../InteractuableMissileCannon2")
 door = NodePath("../InteractuableMissileCannon2/InteractuableEscotilla2")
@@ -843,26 +844,26 @@ prompt_message = "Fire"
 shape = SubResource("BoxShape3D_caa23")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Interactuables/MisilLauncher" unique_id=1620677740]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.05417956, 1.2769861, 0.70409846, 0.2660774)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.05417956, 0, 0, 0)
 mesh = SubResource("BoxMesh_7skyi")
 
 [node name="InteractuableMissileCannon2" parent="Interactuables" unique_id=702161493 node_paths=PackedStringArray("Coor_x_Node", "Coor_Y_Node", "Coor_Z_Node") instance=ExtResource("45_qyey3")]
-transform = Transform3D(-9.900356e-16, -2.2649372e-08, -0.3, 0.3, -1.3113417e-08, -1.2705495e-22, -1.3113417e-08, -0.3, 2.2649372e-08, 7.0725665, 0.8938483, -10.073361)
+transform = Transform3D(5.7320567e-16, 1.3113417e-08, 0.3, 0.3, -1.3113417e-08, 0, 1.3113417e-08, 0.3, -1.3113417e-08, 7.015692, 0.8938483, -9.997248)
 Coor_x_Node = NodePath("../InteractuablePerilla")
 Coor_Y_Node = NodePath("../InteractuablePerilla2")
 Coor_Z_Node = NodePath("../InteractuablePerilla3")
 
 [node name="InteractuableEscotilla2" parent="Interactuables/InteractuableMissileCannon2" unique_id=2113646208 instance=ExtResource("46_bkcj8")]
-transform = Transform3D(-1.2091486e-07, -1.3831048, 6.045743e-08, -6.0457424e-08, 6.045744e-08, 1.3831048, -1.3831048, 1.2091486e-07, -6.045743e-08, 0, 0, 0)
+transform = Transform3D(-1.2091486e-07, -1.3831048, 6.045743e-08, -6.0457424e-08, 6.045744e-08, 1.3831048, -1.3831048, 1.2091486e-07, -6.045743e-08, 2.2689142e-09, 0.051906705, -2.2689142e-09)
 
 [node name="MissilSupply" parent="Interactuables" unique_id=558662085 instance=ExtResource("47_402hl")]
 transform = Transform3D(0.43655902, 0, 0, 0, 1, 0, 0, 0, 0.30375633, 4.6080775, 1.0116795, -10.03653)
 
 [node name="InteractuablePerilla" parent="Interactuables" unique_id=133983645 instance=ExtResource("48_jjcgm")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.661508, 0.9198169, -9.999527)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.5417495, 0.9198169, -9.999527)
 
 [node name="InteractuablePerilla2" parent="Interactuables" unique_id=299781051 instance=ExtResource("48_jjcgm")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.2748094, 0.9092463, -9.976229)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.2541018, 0.9092463, -9.976229)
 
 [node name="InteractuablePerilla3" parent="Interactuables" unique_id=350292558 instance=ExtResource("48_jjcgm")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.135574, 0.9402668, -10.026292)
