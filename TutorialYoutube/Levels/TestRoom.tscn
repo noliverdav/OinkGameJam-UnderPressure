@@ -869,6 +869,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.2541018, 0.9092463, -
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.135574, 0.9402668, -10.026292)
 min = 0
 max = 20
+show_degree_in_text = false
 
 [node name="Ammobox" parent="." unique_id=1982394423 instance=ExtResource("48_vdgyg")]
 transform = Transform3D(0.7884283, 0, 0.13557594, 0, 0.8, 0, -0.13557594, 0, 0.7884283, 2.3230321, 1.2747561, 0.6151562)

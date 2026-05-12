@@ -3,6 +3,8 @@ class_name InteractuablePerilla
 @export var step: int = 1
 @export var min:=-10
 @export var max:=10
+@export var show_degree_in_text:=true
+
 
 @export var label: Label3D
 @onready var PerillaMesh := $MeshInstance3D
@@ -44,8 +46,13 @@ func stop_interacting():
 	is_interacting = false
 
 func update_visual():
+	
 	if label:
-		label.text = str(current_degrees) + "°"
+		if show_degree_in_text:
+			label.text = str(current_degrees) + "°"
+		else:
+			label.text = str(current_degrees)
+			
 	if PerillaMesh:
 		var target_rotation = deg_to_rad(-_internal_degrees * 30)
 		PerillaMesh.rotation.y = lerp_angle(PerillaMesh.rotation.y,target_rotation,0.15)
