@@ -21,6 +21,7 @@ text = "0001"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1221498552]
 transform = Transform3D(1, 0, 0, 0, -3.959828e-09, -1, 0, 0.090590306, -4.371139e-08, 0, 0, 0)
+rotation_order = 0
 mesh = SubResource("CylinderMesh_qtn2q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1269627170]
