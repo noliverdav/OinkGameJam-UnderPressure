@@ -7,6 +7,10 @@ var coorDistance :=0
 var selectedInMinimap:bool
 @export var label: Label3D
 
+@export var materialSelected:Material;
+@export var materialUnselected:Material;
+
+
 
 func _ready() -> void:
 	coordX = randi_range(-10, 10)
@@ -40,9 +44,9 @@ func get_selectedEnemy() -> bool:
 func ChangeColorSelected():
 	var material = $MeshInstance3D.get_active_material(0)
 	if(get_selectedEnemy()):
-		material.albedo_color = Color(0, 1, 0)
+		$MeshInstance3D.set_surface_override_material(0, materialSelected)	
 	else:
-		material.albedo_color = Color(1, 0, 0)
+		$MeshInstance3D.set_surface_override_material(0, materialUnselected)
 		
 
 
