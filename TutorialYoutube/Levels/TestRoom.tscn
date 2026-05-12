@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://bh61rdk2mge7s" path="res://Models/Poster/Poster04.fbx" id="38_i28vc"]
 [ext_resource type="PackedScene" uid="uid://bhage7qfjqj8q" path="res://Models/Poster/Poster06.fbx" id="39_k0rth"]
 [ext_resource type="PackedScene" uid="uid://b4gmiu2axega7" path="res://Models/Poster/Poster07.fbx" id="40_uuce1"]
+[ext_resource type="PackedScene" uid="uid://dxum6leurfere" path="res://Prefabs/Interactuables/enemy_degree_separeted_panel.tscn" id="41_ns7an"]
 [ext_resource type="PackedScene" uid="uid://cotj7cue4at3l" path="res://Models/Poster/Poster08.fbx" id="41_p5r58"]
 [ext_resource type="PackedScene" uid="uid://620tjtrct5nv" path="res://Prefabs/Interactuables/alarm_waves.tscn" id="42_vdgyg"]
 [ext_resource type="PackedScene" uid="uid://dxki41ba8y3aa" path="res://Prefabs/Interactuables/Minimap.tscn" id="43_r8yrl"]
@@ -626,7 +627,7 @@ transform = Transform3D(1, -4.3711385e-08, 1.3113417e-07, 4.3711385e-08, 1, 3.55
 transform = Transform3D(1, -4.3711385e-08, 1.3113417e-07, 4.3711385e-08, 1, 3.5527137e-15, -1.3113417e-07, 2.6865683e-16, 1, 8.110801, 0.33191025, 0.65900654)
 
 [node name="Pipe_L5" parent="." unique_id=931657114 instance=ExtResource("26_p5r58")]
-transform = Transform3D(-1.3033655e-07, 1.326473e-15, 0.8, 3.496911e-08, 0.8, 4.3707184e-15, -0.8, 3.496911e-08, -1.3033655e-07, 8.419114, 1.1187999, -0.0837497)
+transform = Transform3D(-1.3033655e-07, 1.326473e-15, 0.8, 3.496911e-08, 0.8, 4.3707184e-15, -0.8, 3.496911e-08, -1.3033655e-07, 8.520951, 1.1187999, 0.29339832)
 
 [node name="Pipe_L2" parent="." unique_id=558361835 instance=ExtResource("26_p5r58")]
 transform = Transform3D(3.4969112e-08, -0.8, 1.2079664e-07, -0.8, -3.4969112e-08, 0, 5.280189e-15, -1.2079664e-07, -0.8, 2.6021047, 1.7139039, 1.3403664)
@@ -695,7 +696,7 @@ transform = Transform3D(-1.8048097, -0.8617785, -3.019916e-07, -0.82880807, 1.73
 transform = Transform3D(-0.7219238, -0.34471136, -6.9938224e-08, -0.3447114, 0.7219239, -1.5067808e-08, 6.960514e-08, 1.6538362e-08, -0.8, 5.4576283, 1.7164437, -0.6534836)
 
 [node name="Pipe41" parent="." unique_id=1188741767 instance=ExtResource("29_fa46q")]
-transform = Transform3D(-0.7997061, 0.02168125, -6.913135e-08, -7.055286e-08, -5.149463e-08, 0.79999995, 0.02168119, 0.7997061, 5.3387808e-08, 8.254884, 0.31366557, -0.08360666)
+transform = Transform3D(-0.7997061, 0.02168125, -6.913135e-08, -7.055286e-08, -5.149463e-08, 0.79999995, 0.02168119, 0.7997061, 5.3387808e-08, 8.356721, 0.31366557, 0.29354137)
 
 [node name="Pipe_L6" parent="." unique_id=58217059 instance=ExtResource("26_p5r58")]
 transform = Transform3D(-0.8, 3.496911e-08, -1.6530566e-07, 3.496911e-08, 0.8, 4.370718e-15, 1.6530566e-07, -2.8550237e-15, -0.8, 7.7856054, 1.1187999, -0.76465535)
@@ -850,6 +851,21 @@ transform = Transform3D(-0.0113111995, -0.062945604, -0.9979529, 0.0060309307, 0
 [node name="Interactuables" type="Node3D" parent="." unique_id=1362901461]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.072012)
 
+[node name="EnemyDegreeSeparetedPanel" parent="Interactuables" unique_id=1085039795 node_paths=PackedStringArray("enemyManager") instance=ExtResource("41_ns7an")]
+transform = Transform3D(-0.2065286, 0, -0.9784406, 0, 1, 0, 0.9784406, 0, -0.2065286, 7.7990074, 0.9919964, -7.869685)
+showX = true
+enemyManager = NodePath("../Minimap")
+
+[node name="EnemyDegreeSeparetedPanel2" parent="Interactuables" unique_id=189385574 node_paths=PackedStringArray("enemyManager") instance=ExtResource("41_ns7an")]
+transform = Transform3D(-0.23371685, 0, -0.9723047, 0, 1, 0, 0.9723047, 0, -0.23371685, 7.849084, 0.9816163, -7.64331)
+showY = true
+enemyManager = NodePath("../Minimap")
+
+[node name="EnemyDegreeSeparetedPanel3" parent="Interactuables" unique_id=1386567656 node_paths=PackedStringArray("enemyManager") instance=ExtResource("41_ns7an")]
+transform = Transform3D(-0.3454621, 0, -0.9384327, 0, 1, 0, 0.9384327, 0, -0.3454621, 7.812359, 1.1211876, -6.538063)
+showZ = true
+enemyManager = NodePath("../Minimap")
+
 [node name="Alarm" parent="Interactuables" unique_id=69876843 node_paths=PackedStringArray("enemyManager") instance=ExtResource("42_vdgyg")]
 transform = Transform3D(-4.371138e-08, -0.30952856, 0, 0.9999999, -1.3529923e-08, 0, 0, 0, -0.70322263, 6.975935, 1.3418717, -8.239553)
 enemyManager = NodePath("../Minimap")
@@ -874,13 +890,13 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.05417956, 0, 0, 0)
 mesh = SubResource("BoxMesh_7skyi")
 
 [node name="InteractuableMissileCannon2" parent="Interactuables" unique_id=702161493 node_paths=PackedStringArray("Coor_x_Node", "Coor_Y_Node", "Coor_Z_Node") instance=ExtResource("45_qyey3")]
-transform = Transform3D(5.7320557e-16, 1.3113415e-08, 0.29999998, 0.28791952, -0.0842754, 3.683794e-09, 0.0842754, 0.28791952, -1.2585361e-08, 6.8058453, 1.0879289, -9.413046)
+transform = Transform3D(5.7320557e-16, 1.3113415e-08, 0.29999998, 0.28791952, -0.0842754, 3.683794e-09, 0.0842754, 0.28791952, -1.2585361e-08, 6.8058453, 1.0987428, -9.449991)
 Coor_x_Node = NodePath("../InteractuablePerilla")
 Coor_Y_Node = NodePath("../InteractuablePerilla2")
 Coor_Z_Node = NodePath("../InteractuablePerilla3")
 
 [node name="InteractuableEscotilla2" parent="Interactuables/InteractuableMissileCannon2" unique_id=2113646208 instance=ExtResource("46_bkcj8")]
-transform = Transform3D(-1.2091486e-07, -1.3831048, 6.045743e-08, -6.0457424e-08, 6.045744e-08, 1.3831048, -1.3831048, 1.2091486e-07, -6.045743e-08, 2.2689142e-09, 0.051906705, -2.2689142e-09)
+transform = Transform3D(-1.2091486e-07, -1.3831048, 6.045743e-08, -6.0457424e-08, 6.045744e-08, 1.3831048, -1.3831048, 1.2091486e-07, -6.045743e-08, 5.7791087e-09, 0.19114794, -8.355341e-09)
 
 [node name="MissilSupply" parent="Interactuables" unique_id=558662085 instance=ExtResource("47_402hl")]
 transform = Transform3D(0.43655902, 0, 0, 0, 1, 0, 0, 0, 0.30375633, 4.6080775, 1.0116795, -10.03653)
@@ -892,7 +908,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.8001695, 1.0692759, -
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.79348, 1.1084166, -9.5584)
 
 [node name="InteractuablePerilla3" parent="Interactuables" unique_id=350292558 instance=ExtResource("48_jjcgm")]
-transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 8.125929, 1.1243217, -9.148419)
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 8.227766, 1.1243217, -8.771272)
 min = 0
 max = 20
 show_degree_in_text = false

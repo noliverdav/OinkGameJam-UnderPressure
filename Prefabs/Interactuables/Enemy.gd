@@ -29,7 +29,6 @@ func check_hit(tx, ty, td) -> bool:
 func Destroy():
 	queue_free()
 
-#tomado desde Signals
 func _on_attack_timer_timeout() -> void:
 	pass # Replace with function body.
 	GameState.take_damage(10) 
