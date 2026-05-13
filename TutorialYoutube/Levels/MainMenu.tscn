@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://bjkdm3gskwqmr" path="res://MainMenu.gd" id="1_5qolq"]
 [ext_resource type="PackedScene" uid="uid://cakk7ub4iwyn5" path="res://Models/Floor&Wall/Floor&Wall.fbx" id="1_d5vh4"]
 [ext_resource type="FontFile" uid="uid://b0ymmh53belyr" path="res://fonts/PixelatedEleganceRegular-ovawB.ttf" id="2_66px1"]
-[ext_resource type="Script" uid="uid://c7rgwfgmpmshv" path="res://TutorialYoutube/Levels/camera_MainMenu.gd" id="2_u343c"]
+[ext_resource type="Script" path="res://TutorialYoutube/Levels/camera_MainMenu.gd" id="2_u343c"]
 [ext_resource type="PackedScene" uid="uid://f1t63mo0lb3v" path="res://Models/Kitchen/Stove/Stove.fbx" id="2_w2v74"]
 [ext_resource type="PackedScene" uid="uid://cw6ceymux6jer" path="res://Models/Floor&Wall/Roof.fbx" id="3_yjs4a"]
 [ext_resource type="PackedScene" uid="uid://bm461wmi6ma73" path="res://Models/Poster/Poster01.fbx" id="4_y7612"]
 [ext_resource type="PackedScene" uid="uid://bi7jdk8baixmt" path="res://Models/Door/DoorFrame.fbx" id="5_n7w43"]
 [ext_resource type="PackedScene" uid="uid://cthmo00x24cg4" path="res://Models/Kitchen/Fridge/Fridge.fbx" id="6_t5cy8"]
-[ext_resource type="Script" uid="uid://c6tab2psrxvyw" path="res://TutorialYoutube/Levels/LightFlicker_Menu.gd" id="7_nhd4s"]
+[ext_resource type="Script" path="res://TutorialYoutube/Levels/LightFlicker_Menu.gd" id="7_nhd4s"]
 [ext_resource type="PackedScene" uid="uid://ce10uhhlpf8w0" path="res://Models/Pipes/Pipe01.fbx" id="7_vmk1w"]
 [ext_resource type="PackedScene" uid="uid://y1s0gcftux0d" path="res://Models/Bed/Bed.fbx" id="8_n0mve"]
 [ext_resource type="Shader" uid="uid://brknbqqgcqnyt" path="res://Shader/Overlay.gdshader" id="10_v24r5"]
@@ -105,6 +105,7 @@ offset_right = -320.0
 offset_bottom = 182.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 70
 
 [node name="Play" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=707924773]
 layout_mode = 2
@@ -115,23 +116,31 @@ text = "PLAY"
 [node name="Exit" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1793279700]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_66px1")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 40
 text = "EXIT"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=448972302]
 environment = SubResource("Environment_54q6p")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1577718890]
-offset_left = 758.0
-offset_top = 107.0
-offset_right = 966.0
-offset_bottom = 169.0
+offset_left = 650.0
+offset_top = 122.0
+offset_right = 1127.0
+offset_bottom = 239.0
+theme_override_constants/separation = 400
 
-[node name="Play" type="Button" parent="VBoxContainer" unique_id=1254660004]
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=239576400]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_66px1")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 80
 text = "BUNKER"
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=1811367186]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_66px1")
+theme_override_font_sizes/font_size = 20
+text = "Game made for Oink Game Jam 2026
+"
 
 [node name="Level" type="Node3D" parent="." unique_id=1297881517]
 

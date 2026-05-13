@@ -9,7 +9,6 @@ func _ready():
 	salir_button.pressed.connect(_on_salir)
 	volume_slider.value_changed.connect(_on_volume_changed)
 	
-	# Configurar el slider
 	volume_slider.min_value = 0.0
 	volume_slider.max_value = 1.0
 	volume_slider.step = 0.01
@@ -31,7 +30,6 @@ func toggle_pause():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_volume_changed(value: float):
-	# Convierte 0.0-1.0 a decibeles y aplica al bus Master
 	AudioServer.set_bus_volume_db(0, linear_to_db(value))
 
 func _on_reanudar():

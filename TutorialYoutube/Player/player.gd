@@ -111,12 +111,10 @@ func crouch(delta : float, reverse = false):
 
 func hurt(damage : float):
 	ui.hurt(damage)
-	
-	if ui.health_bar.value <= 0:
-		die()
-
 
 func die():
+	if dead:
+		return
 	dead = true
 	moving = false
 	ui.show_gameover()

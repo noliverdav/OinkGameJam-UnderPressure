@@ -11,7 +11,7 @@ var _origin_rotation: Vector3
 
 func _ready() -> void:
 	if camera == null:
-		push_error("CameraShaker: asigná la Camera3D en el inspector.")
+		push_error("CameraShaker: asignar la Camera3D en el inspector.")
 		return
 	_origin_position = camera.position
 	_origin_rotation = camera.rotation
