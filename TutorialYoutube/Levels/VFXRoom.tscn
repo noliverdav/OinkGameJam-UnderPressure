@@ -20,7 +20,7 @@ size = Vector2(2, 2)
 _data = [Vector2(0, 0.9230175), 0.0, -0.9230175, 0, 1, Vector2(1, 0), -0.9230175, 0.0, 1, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_6jbr3"]
+[sub_resource type="CurveTexture" id="CurveTexture_07fij"]
 curve = SubResource("Curve_cv0ye")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h6fni"]
@@ -36,14 +36,14 @@ damping_max = 0.2
 scale_min = 0.01
 scale_max = 0.049999997
 color = Color(0.77194905, 0.5985478, 0.11565443, 1)
-emission_curve = SubResource("CurveTexture_6jbr3")
+emission_curve = SubResource("CurveTexture_07fij")
 
-[sub_resource type="Gradient" id="Gradient_07fij"]
+[sub_resource type="Gradient" id="Gradient_ubpy2"]
 offsets = PackedFloat32Array(0, 0.44354838, 1)
 colors = PackedColorArray(0.21894622, 0.13422745, 0.03426795, 1, 0.5519033, 0.3439525, 0.06210512, 1, 0.58431375, 0.41960785, 0.023529412, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ubpy2"]
-gradient = SubResource("Gradient_07fij")
+gradient = SubResource("Gradient_ubpy2")
 fill = 2
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8076923, 0.17094018)
@@ -221,7 +221,7 @@ shadow_enabled = true
 spot_range = 5.922469
 
 [node name="Player" parent="." unique_id=1153907974 instance=ExtResource("2_07fij")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.019226, 0.38565028, 9.606182)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.019226, 0.38565028, 5.2463655)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=1788197832]
 transform = Transform3D(2.3695078, 0, 0, 0, 2.3695078, 0, 0, 0, 2.3695078, 0, 0, 0)

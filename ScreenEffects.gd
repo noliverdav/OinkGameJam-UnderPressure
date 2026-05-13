@@ -1,6 +1,6 @@
 extends ColorRect
 
-@export var flash_color: Color = Color(1.0, 0.25, 0.0, 0.55)
+@export var flash_color: Color = Color(0.986, 0.278, 0.0, 0.55)
 @export var flash_duration: float = 0.1
 @export var vignette_duration: float = 1.0
 

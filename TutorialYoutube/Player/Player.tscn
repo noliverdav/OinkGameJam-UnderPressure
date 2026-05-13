@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cienjoyv87err" path="res://Prefabs/Interactuables/player_missilGrabbed_mesh_toggle.gd" id="2_2bhh8"]
 [ext_resource type="Texture2D" uid="uid://dxn8y4celdh0r" path="res://TutorialYoutube/Player/hurt.png" id="2_ehnts"]
 [ext_resource type="PackedScene" uid="uid://by7g6qtybner8" path="res://TutorialYoutube/Interact/InteractRay.tscn" id="2_h0cin"]
+[ext_resource type="Script" uid="uid://b26blxqsbo46i" path="res://CameraShaker.gd" id="2_hosta"]
 [ext_resource type="Script" uid="uid://d0ltho5qcjg6u" path="res://TutorialYoutube/Player/ui.gd" id="3_uw0jf"]
 [ext_resource type="FontFile" uid="uid://bguf3rdjitpq7" path="res://TutorialYoutube/Poppins-Regular.ttf" id="5_87d1x"]
 [ext_resource type="Texture2D" uid="uid://bidw8qikasua4" path="res://TutorialYoutube/Player/crosshair.png" id="6_20gd7"]
@@ -45,7 +46,12 @@ shape = SubResource("CapsuleShape3D_b0b6p")
 [node name="Head" type="Node3D" parent="." unique_id=225141714]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1214383344]
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1214383344 node_paths=PackedStringArray("camera")]
+script = ExtResource("2_hosta")
+camera = NodePath(".")
+max_offset = 1.5
+max_rotation = 0.15
+decay = 1.0
 
 [node name="HandsPivot" type="Node3D" parent="Head/Camera3D" unique_id=775730962]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.93565583, -1.1508439)

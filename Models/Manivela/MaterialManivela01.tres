@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c0pnlrs8me2xy"]
+
+[ext_resource type="Texture2D" uid="uid://deg4nmrs0ii1x" path="res://Models/Manivela/Manivela_TEX.jpg" id="1_sjiql"]
+
+[resource]
+resource_name = "Material.001"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_sjiql")
+emission_enabled = true
