@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cmvudfv03wcmd" path="res://TutorialYoutube/Player/Player.tscn" id="2_d7iq0"]
 [ext_resource type="FontFile" uid="uid://b0ymmh53belyr" path="res://fonts/PixelatedEleganceRegular-ovawB.ttf" id="2_mrb3d"]
 [ext_resource type="PackedScene" uid="uid://cw6ceymux6jer" path="res://Models/Floor&Wall/Roof.fbx" id="3_5y7r6"]
-[ext_resource type="Script" uid="uid://dxljmpdk0tpin" path="res://LightFlicker.gd" id="4_7acwd"]
+[ext_resource type="Script" path="res://LightFlicker.gd" id="4_7acwd"]
 [ext_resource type="PackedScene" uid="uid://bm461wmi6ma73" path="res://Models/Poster/Poster01.fbx" id="4_qmk58"]
 [ext_resource type="PackedScene" uid="uid://c4rb64bq5rv3k" path="res://Models/Ammo Shell/AmmoShell.fbx" id="4_v2nhe"]
 [ext_resource type="PackedScene" uid="uid://f1t63mo0lb3v" path="res://Models/Kitchen/Stove/Stove.fbx" id="5_r5awt"]

@@ -4,7 +4,7 @@ var state := {
 	"health": 100,
 	"key": 0,
 	"gabbedMissil": false,
-	"enemyCurrentWave":1,
+	"enemyCurrentWave":0,
 	"enemyMaxWave":20
 }
 
@@ -25,12 +25,17 @@ signal value_changed(key, value)
 
 var player_UI: Player_UI = null
 
+func waveActive(a:bool):
+	player_UI.TonggleTimer(a)
 
 func nextWave():
 	var currentaWave = get_value("enemyCurrentWave")
 	var nextWave = currentaWave+1
 	set_value("enemyCurrentWave",  nextWave)
 	player_UI._updateEnemyWave(nextWave,get_value("enemyMaxWave"))
+	
+func Wave_Timer(_timer: int):
+	player_UI._updateEnemyWave_Timer(_timer)
 
 var player_node: Player = null
 

@@ -148,6 +148,22 @@ offset_bottom = -77.0
 theme_override_font_sizes/font_size = 35
 text = "Wave: 1/20"
 
+[node name="WaveText_Timer" type="Label" parent="UI" unique_id=669367287]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -118.0
+offset_right = 88.0
+offset_bottom = -69.0
+theme_override_font_sizes/font_size = 35
+text = "00"
+horizontal_alignment = 1
+
 [node name="GameOver" type="Panel" parent="UI" unique_id=1308784294]
 visible = false
 layout_mode = 1

@@ -6,6 +6,8 @@ class_name Player_UI
 @onready var health_bar = $HealthBar
 @onready var game_over = $GameOver
 @onready var enemyWaveUI = $WaveText
+@onready var enemyWaveUI_Timer = $WaveText_Timer
+
 
 
 var hurt_tween : Tween
@@ -21,6 +23,13 @@ func _ready():
 func _updateEnemyWave(curremtWave:int, maxWave:int):
 	enemyWaveUI.text = str("Wave: ",curremtWave,"/",maxWave)
 	
+func _updateEnemyWave_Timer(curremtWave_timer:int):
+	
+	enemyWaveUI_Timer.text = str(curremtWave_timer)
+
+func TonggleTimer(a: bool):
+	enemyWaveUI_Timer.visible = a
+
 
 #func _process(_delta):
 #	$KeyCounter.text = str(GameState.get_value("key"))

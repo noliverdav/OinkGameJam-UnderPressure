@@ -14,12 +14,16 @@ var enemies_list: Array = []
 
 func _ready():
 	cannon.connect("fireSignal", cannonFiredCheckEnemies)
-	spawnedEnemiesCounter = enemiesLimiter
+	spawnedEnemiesCounter = 0
+	wave_timer = 60
 
 var spawn_timer := 0.0
 
 func _process(delta):
 	checkEnemySelected()
+	
+	GameState.Wave_Timer(wave_timer)
+	GameState.waveActive(Check_CleanEnemiesWave())
 	
 	if Check_CleanEnemiesWave():
 		nextWaveTimer(delta)
@@ -80,10 +84,12 @@ func cannonFiredCheckEnemies(coordx,coordy,coordz):
 				break
 
 func nextWaveTimer(delta):
-	wave_timer += delta
-	if wave_timer >= time_until_next_wave:
+	wave_timer -= delta
+	time_until_next_wave = 10
+		
+	if wave_timer <= 0:
 		Start_Next_Wave()
-		wave_timer = 0.0 
+		wave_timer = time_until_next_wave 
 
 func Check_CleanEnemiesWave() -> bool:
 	return enemies_list.is_empty() and spawnedEnemiesCounter<=0
