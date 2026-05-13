@@ -1,7 +1,7 @@
 extends Node
 
 var state := {
-	"health": 100,
+	"health": 75,
 	"key": 0,
 	"gabbedMissil": false,
 	"enemyCurrentWave":0,

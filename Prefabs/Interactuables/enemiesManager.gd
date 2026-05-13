@@ -41,12 +41,18 @@ func spawn_enemy():
 	add_child(enemyInstance)
 	
 func checkWave_IncreaseEnemies():
-	if GameState.get_value("enemyCurrentWave")>=0:
+	if GameState.get_value("enemyCurrentWave")>=1:
 		enemiesLimiter=1
-	if GameState.get_value("enemyCurrentWave")>=5:
-		enemiesLimiter=2
-	if GameState.get_value("enemyCurrentWave")>=15:
+	if GameState.get_value("enemyCurrentWave")>=2:
 		enemiesLimiter=3
+	if GameState.get_value("enemyCurrentWave")>=3:
+		enemiesLimiter=6
+	if GameState.get_value("enemyCurrentWave")>=4:
+		enemiesLimiter=9
+	if GameState.get_value("enemyCurrentWave")>=5:
+		enemiesLimiter=15
+	if GameState.get_value("enemyCurrentWave")>=6:
+		enemiesLimiter=23
 	spawnedEnemiesCounter = enemiesLimiter
 
 var enemySlected;
