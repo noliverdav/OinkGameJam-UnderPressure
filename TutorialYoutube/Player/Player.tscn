@@ -4,17 +4,16 @@
 [ext_resource type="Script" uid="uid://cienjoyv87err" path="res://Prefabs/Interactuables/player_missilGrabbed_mesh_toggle.gd" id="2_2bhh8"]
 [ext_resource type="Texture2D" uid="uid://dxn8y4celdh0r" path="res://TutorialYoutube/Player/hurt.png" id="2_ehnts"]
 [ext_resource type="PackedScene" uid="uid://by7g6qtybner8" path="res://TutorialYoutube/Interact/InteractRay.tscn" id="2_h0cin"]
-[ext_resource type="Script" uid="uid://b26blxqsbo46i" path="res://CameraShaker.gd" id="2_hosta"]
+[ext_resource type="Script" path="res://CameraShaker.gd" id="2_hosta"]
 [ext_resource type="Script" uid="uid://d0ltho5qcjg6u" path="res://TutorialYoutube/Player/ui.gd" id="3_uw0jf"]
+[ext_resource type="PackedScene" uid="uid://c4rb64bq5rv3k" path="res://Models/Ammo Shell/AmmoShell.fbx" id="4_5ntnf"]
 [ext_resource type="FontFile" uid="uid://bguf3rdjitpq7" path="res://TutorialYoutube/Poppins-Regular.ttf" id="5_87d1x"]
-[ext_resource type="Texture2D" uid="uid://bidw8qikasua4" path="res://TutorialYoutube/Player/crosshair.png" id="6_20gd7"]
+[ext_resource type="Texture2D" uid="uid://caecmlg263u28" path="res://TutorialYoutube/Player/crosshair_punto.png" id="6_hosta"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b0b6p"]
 resource_local_to_scene = true
 radius = 1.0
 height = 4.0
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_tixxx"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_x3w4a"]
 radius = 0.9
@@ -57,10 +56,11 @@ decay = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.93565583, -1.1508439)
 
 [node name="MissilGrabed" type="MeshInstance3D" parent="Head/Camera3D/HandsPivot" unique_id=1858066620]
-transform = Transform3D(0.33961672, -1.2078539, 0, 0.74066, 0.5538404, 0, 0, 0, 0.66181153, 0, 0, 0)
-visible = false
-mesh = SubResource("CapsuleMesh_tixxx")
+transform = Transform3D(0.33697712, -1.2078539, 0, 0.7349034, 0.5538404, 0, 0, 0, 0.66181153, 0, 0, 0)
 script = ExtResource("2_2bhh8")
+
+[node name="AmmoShell" parent="Head/Camera3D/HandsPivot/MissilGrabed" unique_id=1881497026 instance=ExtResource("4_5ntnf")]
+transform = Transform3D(2.477, 0, 0, 0, 1.404, 0, 0, 0, 2.477, 0, -0.967441, 0)
 
 [node name="InteractRay" parent="Head" unique_id=1197492959 instance=ExtResource("2_h0cin")]
 
@@ -91,7 +91,7 @@ offset_right = 16.0
 offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_20gd7")
+texture = ExtResource("6_hosta")
 
 [node name="HurtOverlay" type="TextureRect" parent="UI" unique_id=1529079628]
 modulate = Color(1, 1, 1, 0)
