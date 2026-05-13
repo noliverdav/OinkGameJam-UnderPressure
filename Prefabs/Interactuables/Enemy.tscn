@@ -23,7 +23,7 @@ wait_time = 30.0
 autostart = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1458028284]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.33714e-08, -3.2071662e-15, -1.092545)
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 7.33714e-08, -3.2071662e-15, -1.092545)
 mesh = SubResource("SphereMesh_tt7e2")
 surface_material_override/0 = SubResource("StandardMaterial3D_tt7e2")
 

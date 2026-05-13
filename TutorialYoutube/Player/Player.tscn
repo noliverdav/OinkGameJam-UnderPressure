@@ -6,15 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://by7g6qtybner8" path="res://TutorialYoutube/Interact/InteractRay.tscn" id="2_h0cin"]
 [ext_resource type="Script" uid="uid://b26blxqsbo46i" path="res://CameraShaker.gd" id="2_hosta"]
 [ext_resource type="Script" uid="uid://d0ltho5qcjg6u" path="res://TutorialYoutube/Player/ui.gd" id="3_uw0jf"]
+[ext_resource type="PackedScene" uid="uid://c4rb64bq5rv3k" path="res://Models/Ammo Shell/AmmoShell.fbx" id="4_5ntnf"]
 [ext_resource type="FontFile" uid="uid://bguf3rdjitpq7" path="res://TutorialYoutube/Poppins-Regular.ttf" id="5_87d1x"]
-[ext_resource type="Texture2D" uid="uid://bidw8qikasua4" path="res://TutorialYoutube/Player/crosshair.png" id="6_20gd7"]
+[ext_resource type="Texture2D" uid="uid://caecmlg263u28" path="res://TutorialYoutube/Player/crosshair_punto.png" id="6_hosta"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b0b6p"]
 resource_local_to_scene = true
 radius = 1.0
 height = 4.0
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_tixxx"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_x3w4a"]
 radius = 0.9
@@ -57,10 +56,12 @@ decay = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.93565583, -1.1508439)
 
 [node name="MissilGrabed" type="MeshInstance3D" parent="Head/Camera3D/HandsPivot" unique_id=1858066620]
-transform = Transform3D(0.33961672, -1.2078539, 0, 0.74066, 0.5538404, 0, 0, 0, 0.66181153, 0, 0, 0)
-visible = false
-mesh = SubResource("CapsuleMesh_tixxx")
+transform = Transform3D(0.33697712, -1.2078539, 0, 0.7349034, 0.5538404, 0, 0, 0, 0.66181153, 0, 0, 0)
 script = ExtResource("2_2bhh8")
+
+[node name="AmmoShell" parent="Head/Camera3D/HandsPivot/MissilGrabed" unique_id=1881497026 instance=ExtResource("4_5ntnf")]
+transform = Transform3D(1.4, 0, 0, 0, 0.794, 0, 0, 0, 1.4, 0.25624228, -0.5573532, 0)
+visible = false
 
 [node name="InteractRay" parent="Head" unique_id=1197492959 instance=ExtResource("2_h0cin")]
 
@@ -91,9 +92,10 @@ offset_right = 16.0
 offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_20gd7")
+texture = ExtResource("6_hosta")
 
 [node name="HurtOverlay" type="TextureRect" parent="UI" unique_id=1529079628]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -147,6 +149,23 @@ offset_right = 193.0
 offset_bottom = -77.0
 theme_override_font_sizes/font_size = 35
 text = "Wave: 1/20"
+
+[node name="WaveText_Timer" type="Label" parent="UI" unique_id=669367287]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -118.0
+offset_right = 88.0
+offset_bottom = -69.0
+theme_override_font_sizes/font_size = 35
+text = "00"
+horizontal_alignment = 1
 
 [node name="GameOver" type="Panel" parent="UI" unique_id=1308784294]
 visible = false

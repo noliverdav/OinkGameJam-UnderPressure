@@ -52,6 +52,7 @@ prompt_action = "interact_perilla"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90501016, 0)
 render_priority = 1
 outline_render_priority = 0
+modulate = Color(0.11764706, 0.4117647, 0, 1)
 text = "0001"
 font = ExtResource("2_5ira2")
 

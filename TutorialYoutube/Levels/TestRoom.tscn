@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cmvudfv03wcmd" path="res://TutorialYoutube/Player/Player.tscn" id="2_d7iq0"]
 [ext_resource type="FontFile" uid="uid://b0ymmh53belyr" path="res://fonts/PixelatedEleganceRegular-ovawB.ttf" id="2_mrb3d"]
 [ext_resource type="PackedScene" uid="uid://cw6ceymux6jer" path="res://Models/Floor&Wall/Roof.fbx" id="3_5y7r6"]
-[ext_resource type="Script" uid="uid://dxljmpdk0tpin" path="res://LightFlicker.gd" id="4_7acwd"]
+[ext_resource type="Script" path="res://LightFlicker.gd" id="4_7acwd"]
 [ext_resource type="PackedScene" uid="uid://bm461wmi6ma73" path="res://Models/Poster/Poster01.fbx" id="4_qmk58"]
 [ext_resource type="PackedScene" uid="uid://c4rb64bq5rv3k" path="res://Models/Ammo Shell/AmmoShell.fbx" id="4_v2nhe"]
 [ext_resource type="PackedScene" uid="uid://f1t63mo0lb3v" path="res://Models/Kitchen/Stove/Stove.fbx" id="5_r5awt"]
@@ -56,6 +56,7 @@
 [ext_resource type="PackedScene" uid="uid://dh4lqpmpkmtr5" path="res://Models/Tablones/Tablon_Corto.fbx" id="50_7acwd"]
 [ext_resource type="PackedScene" uid="uid://cti1mi51nl2xw" path="res://Models/Tablones/Tablon_Largo.fbx" id="51_7e5i0"]
 [ext_resource type="PackedScene" uid="uid://d4kbb1r24fj3u" path="res://Models/Radar/Radar_Base/Base_Radar.fbx" id="52_mrb3d"]
+[ext_resource type="Script" uid="uid://g7s72x2da0e7" path="res://TutorialYoutube/Levels/enemy_wave_timer.gd" id="52_qxj58"]
 [ext_resource type="PackedScene" uid="uid://dmapfj4srnken" path="res://Models/Radar/Radar_Coord/Coordenadas_Radar.fbx" id="53_kwwbd"]
 [ext_resource type="PackedScene" uid="uid://bgg4h8wtai1h8" path="res://Models/Radar/Radar_Screen/Pantalla_Radar.fbx" id="54_a26oj"]
 [ext_resource type="PackedScene" uid="uid://cijh3ltmso7lx" path="res://Models/Perchero/Perchero_01.fbx" id="55_bpuac"]
@@ -245,7 +246,7 @@ transform = Transform3D(8.7422784e-08, -1.9861638e-08, 1, -1, 4.3711374e-08, 8.7
 transform = Transform3D(8.7422784e-08, -1.9861638e-08, 1, -1, 4.3711374e-08, 8.742278e-08, -4.3711374e-08, -1, -1.9861638e-08, 5.9658556, 0.99999994, 2.9422963)
 
 [node name="Floor&Wall34" parent="Level" unique_id=303716591 instance=ExtResource("1_0t4nb")]
-transform = Transform3D(8.7422784e-08, -1.9861638e-08, 1, -1, 4.3711374e-08, 8.742278e-08, -4.3711374e-08, -1, -1.9861638e-08, 7.9658384, 1.0001948, 2.9422529)
+transform = Transform3D(8.7422784e-08, -1.9861638e-08, 1, -1, 4.3711374e-08, 8.742278e-08, -4.3711374e-08, -1, -1.9861638e-08, 7.964105, 1.0001948, 2.9413178)
 
 [node name="Floor&Wall46" parent="Level" unique_id=523700636 instance=ExtResource("1_0t4nb")]
 transform = Transform3D(8.7422784e-08, -1.9861638e-08, 1, -1, 4.3711374e-08, 8.742278e-08, -4.3711374e-08, -1, -1.9861638e-08, 5.9658556, 2.9872699, 2.9422963)
@@ -912,17 +913,17 @@ transform = Transform3D(-0.0113111995, -0.062945604, -0.9979529, 0.0060309307, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.072012)
 
 [node name="EnemyDegreeSeparetedPanel" parent="Interactuables" unique_id=1085039795 node_paths=PackedStringArray("enemyManager") instance=ExtResource("41_ns7an")]
-transform = Transform3D(0.2223014, -0.09229703, -0.9705995, 0.030684723, 0.9956783, -0.08765399, 0.97449505, -0.010296975, 0.22417283, 7.767039, 1.5337131, -7.704261)
+transform = Transform3D(0.15561098, -0.06460792, -0.6794196, 0.021479305, 0.6969748, -0.061357774, 0.6821465, -0.007207883, 0.15692095, 7.7420745, 1.5337131, -7.776302)
 showX = true
 enemyManager = NodePath("../Minimap")
 
 [node name="EnemyDegreeSeparetedPanel2" parent="Interactuables" unique_id=189385574 node_paths=PackedStringArray("enemyManager") instance=ExtResource("41_ns7an")]
-transform = Transform3D(-0.05312031, -0.113983534, -0.9920615, 0.037276655, 0.9925455, -0.11603513, 0.99789214, -0.04314455, -0.04847539, 7.791163, 1.504143, -7.058387)
+transform = Transform3D(-0.037184224, -0.07978846, -0.69444305, 0.026093658, 0.6947817, -0.081224576, 0.6985245, -0.030201193, -0.033932783, 7.791163, 1.504143, -7.1216745)
 showY = true
 enemyManager = NodePath("../Minimap")
 
 [node name="EnemyDegreeSeparetedPanel3" parent="Interactuables" unique_id=1386567656 node_paths=PackedStringArray("enemyManager") instance=ExtResource("41_ns7an")]
-transform = Transform3D(-0.3544351, -0.10891673, -0.9287157, 0.023961455, 0.991809, -0.1254608, 0.9347735, -0.066721104, -0.34892213, 7.7607837, 1.526482, -6.423597)
+transform = Transform3D(-0.24810457, -0.07624173, -0.650101, 0.016773019, 0.69426644, -0.087822564, 0.65434146, -0.046704765, -0.24424551, 7.7790995, 1.526482, -6.514346)
 showZ = true
 enemyManager = NodePath("../Minimap")
 
@@ -932,11 +933,10 @@ enemyManager = NodePath("../Minimap")
 
 [node name="Minimap" parent="Interactuables" unique_id=799756806 node_paths=PackedStringArray("cannon") instance=ExtResource("43_r8yrl")]
 transform = Transform3D(-0.0009790857, 0.01997602, 8.731796e-10, -3.0981078e-18, -8.7422763e-10, 0.019999996, 0.01997602, 0.0009790857, 4.27972e-11, 7.89865, 0.92262304, -7.132395)
-spawn_interval = 0.1
 cannon = NodePath("../InteractuableMissileCannon2")
 
 [node name="MisilLauncher" type="Area3D" parent="Interactuables" unique_id=146116298 node_paths=PackedStringArray("cannon", "door")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.590261, 0.77571785, -10.03651)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2661104, 0.48703796, -6.166691)
 script = ExtResource("44_pspqh")
 cannon = NodePath("../InteractuableMissileCannon2")
 door = NodePath("../InteractuableMissileCannon2/InteractuableEscotilla2")
@@ -946,7 +946,7 @@ prompt_message = "Fire"
 shape = SubResource("BoxShape3D_caa23")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Interactuables/MisilLauncher" unique_id=1620677740]
-transform = Transform3D(-0.2, 0, 4.7365276e-09, 0, 0.2, 0, -1.7484556e-08, 0, -0.05417956, -1.3011041, -0.3188616, 3.6524951)
+transform = Transform3D(-0.2, 0, 4.7365276e-09, 0, 0.2, 0, -1.7484556e-08, 0, -0.05417956, 0, 0, 0)
 mesh = SubResource("BoxMesh_7skyi")
 
 [node name="InteractuableMissileCannon2" parent="Interactuables" unique_id=702161493 node_paths=PackedStringArray("Coor_x_Node", "Coor_Y_Node", "Coor_Z_Node") instance=ExtResource("45_qyey3")]
@@ -963,15 +963,28 @@ transform = Transform3D(-0.436559, 0, 2.2351742e-08, 0, 1, 0, -3.7252903e-08, 0,
 
 [node name="InteractuablePerilla" parent="Interactuables" unique_id=133983645 instance=ExtResource("48_jjcgm")]
 transform = Transform3D(0.35, 0, 6.119594e-08, 0, 0.35, 0, -6.119594e-08, 0, 0.35, 6.5246005, 0.839396, -9.779222)
+coordText = "X"
 
 [node name="InteractuablePerilla2" parent="Interactuables" unique_id=299781051 instance=ExtResource("48_jjcgm")]
 transform = Transform3D(2.6424265e-08, 0, 0.35, 0, 0.35, 0, -0.35, 0, 2.6424265e-08, 5.409789, 0.83942187, -8.068204)
+coordText = "Y"
 
 [node name="InteractuablePerilla3" parent="Interactuables" unique_id=350292558 instance=ExtResource("48_jjcgm")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 5.8430796, 0.83774495, -9.793845)
 min = 0
 max = 20
 show_degree_in_text = false
+coordText = "D"
+
+[node name="EnemyWaveTimer" type="Label3D" parent="Interactuables" unique_id=990444447 node_paths=PackedStringArray("enemiesManager")]
+transform = Transform3D(-0.063940115, 0, -0.99795383, 0, 1, 0, 0.99795383, 0, -0.063940115, 7.879823, 0.9226252, -7.1342926)
+render_priority = 1
+outline_render_priority = 0
+modulate = Color(0.11608725, 0.41098034, 0, 1)
+text = "00"
+font = ExtResource("2_mrb3d")
+script = ExtResource("52_qxj58")
+enemiesManager = NodePath("../Minimap")
 
 [node name="Ammobox" parent="." unique_id=1982394423 instance=ExtResource("48_vdgyg")]
 transform = Transform3D(0.7884283, 0, 0.13557594, 0, 0.8, 0, -0.13557594, 0, 0.7884283, 2.3230321, 1.2747561, 0.6151562)
