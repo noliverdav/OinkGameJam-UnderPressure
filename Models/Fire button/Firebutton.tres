@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://rerji5rioper"]
+
+[ext_resource type="Texture2D" uid="uid://blpw5fslv06tq" path="res://Models/Fire button/FireBox_64_TEX.jpg" id="1_b830r"]
+
+[resource]
+resource_name = "Wall_TEX"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_b830r")
+emission_enabled = true
