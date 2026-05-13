@@ -8,6 +8,7 @@ var state := {
 	"enemyMaxWave":20
 }
 
+
 func has_value(key):
 	return state.has(key)
 
@@ -34,8 +35,8 @@ func nextWave():
 	set_value("enemyCurrentWave",  nextWave)
 	player_UI._updateEnemyWave(nextWave,get_value("enemyMaxWave"))
 	
-func Wave_Timer(_timer: int):
-	player_UI._updateEnemyWave_Timer(_timer)
+#func Wave_Timer(_timer: int):
+#	player_UI._updateEnemyWave_Timer(_timer)
 
 var player_node: Player = null
 

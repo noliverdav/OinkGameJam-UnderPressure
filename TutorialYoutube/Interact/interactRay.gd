@@ -43,9 +43,9 @@ func _physics_process(_delta):
 
 	current_interactable = new_interactable
 
-	if not enemy_found and pointedEnemy:
-		pointedEnemy.Set_selectedEnemy(false)
-		pointedEnemy = null
+	#if not enemy_found and pointedEnemy:
+	#	pointedEnemy.Set_selectedEnemy(false)
+	#	pointedEnemy = null
 	
 	#if not enemy_found and pointedEnemy:
 		# += _delta

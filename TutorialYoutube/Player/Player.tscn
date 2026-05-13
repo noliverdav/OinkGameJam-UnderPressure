@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cienjoyv87err" path="res://Prefabs/Interactuables/player_missilGrabbed_mesh_toggle.gd" id="2_2bhh8"]
 [ext_resource type="Texture2D" uid="uid://dxn8y4celdh0r" path="res://TutorialYoutube/Player/hurt.png" id="2_ehnts"]
 [ext_resource type="PackedScene" uid="uid://by7g6qtybner8" path="res://TutorialYoutube/Interact/InteractRay.tscn" id="2_h0cin"]
-[ext_resource type="Script" path="res://CameraShaker.gd" id="2_hosta"]
+[ext_resource type="Script" uid="uid://b26blxqsbo46i" path="res://CameraShaker.gd" id="2_hosta"]
 [ext_resource type="Script" uid="uid://d0ltho5qcjg6u" path="res://TutorialYoutube/Player/ui.gd" id="3_uw0jf"]
 [ext_resource type="PackedScene" uid="uid://c4rb64bq5rv3k" path="res://Models/Ammo Shell/AmmoShell.fbx" id="4_5ntnf"]
 [ext_resource type="FontFile" uid="uid://bguf3rdjitpq7" path="res://TutorialYoutube/Poppins-Regular.ttf" id="5_87d1x"]
@@ -60,7 +60,8 @@ transform = Transform3D(0.33697712, -1.2078539, 0, 0.7349034, 0.5538404, 0, 0, 0
 script = ExtResource("2_2bhh8")
 
 [node name="AmmoShell" parent="Head/Camera3D/HandsPivot/MissilGrabed" unique_id=1881497026 instance=ExtResource("4_5ntnf")]
-transform = Transform3D(2.477, 0, 0, 0, 1.404, 0, 0, 0, 2.477, 0, -0.967441, 0)
+transform = Transform3D(1.4, 0, 0, 0, 0.794, 0, 0, 0, 1.4, 0.25624228, -0.5573532, 0)
+visible = false
 
 [node name="InteractRay" parent="Head" unique_id=1197492959 instance=ExtResource("2_h0cin")]
 
@@ -94,6 +95,7 @@ grow_vertical = 2
 texture = ExtResource("6_hosta")
 
 [node name="HurtOverlay" type="TextureRect" parent="UI" unique_id=1529079628]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -149,6 +151,7 @@ theme_override_font_sizes/font_size = 35
 text = "Wave: 1/20"
 
 [node name="WaveText_Timer" type="Label" parent="UI" unique_id=669367287]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = -1

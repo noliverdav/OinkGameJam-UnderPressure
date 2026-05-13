@@ -31,7 +31,7 @@ func Destroy():
 
 func _on_attack_timer_timeout() -> void:
 	pass # Replace with function body.
-	GameState.take_damage(10) 
+	GameState.take_damage(25) 
 
 func Set_selectedEnemy(a:bool):
 	selectedInMinimap = a

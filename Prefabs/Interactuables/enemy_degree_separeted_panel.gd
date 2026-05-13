@@ -20,10 +20,10 @@ func _process(delta: float) -> void:
 func updateText():
 	if enemyManager.getEnemySelected():
 		if showX:
-			label.text = str(enemyManager.getEnemySelected().getCoord_X()) + "°"
+			label.text ="X: "+str(enemyManager.getEnemySelected().getCoord_X()) + "°"
 		if showY:
-			label.text = str(enemyManager.getEnemySelected().getCoord_Y()) + "°"
+			label.text = "Y: "+str(enemyManager.getEnemySelected().getCoord_Y()) + "°"
 		if showZ:
-			label.text = str(enemyManager.getEnemySelected().getCoord_Z())
+			label.text = "D: "+str(enemyManager.getEnemySelected().getCoord_Z())
 	else:
 		label.text = ""

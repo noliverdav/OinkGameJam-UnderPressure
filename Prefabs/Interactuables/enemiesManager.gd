@@ -2,7 +2,7 @@ extends Node
 class_name enemiesManager
 @export var enemy_scene: PackedScene
 @export var spawn_interval := 10.0
-@export var time_until_next_wave := 10.0
+var time_until_next_wave := 10.0
 var wave_timer := 0.0 
 
 @export var cannon: Node3D
@@ -22,8 +22,8 @@ var spawn_timer := 0.0
 func _process(delta):
 	checkEnemySelected()
 	
-	GameState.Wave_Timer(wave_timer)
-	GameState.waveActive(Check_CleanEnemiesWave())
+#	GameState.Wave_Timer(wave_timer)
+#	GameState.waveActive(Check_CleanEnemiesWave())
 	
 	if Check_CleanEnemiesWave():
 		nextWaveTimer(delta)
@@ -33,7 +33,6 @@ func _process(delta):
 		if spawn_timer >= spawn_interval and enemies_list.size()<enemiesLimiter and spawnedEnemiesCounter>0:
 			spawn_enemy()
 			spawn_timer = 0.0
-		
 	
 func spawn_enemy():
 	spawnedEnemiesCounter-=1
@@ -85,7 +84,7 @@ func cannonFiredCheckEnemies(coordx,coordy,coordz):
 
 func nextWaveTimer(delta):
 	wave_timer -= delta
-	time_until_next_wave = 10
+	time_until_next_wave = 20
 		
 	if wave_timer <= 0:
 		Start_Next_Wave()
@@ -98,6 +97,9 @@ func Start_Next_Wave():
 	GameState.nextWave()
 	checkWave_IncreaseEnemies()
 	spawn_timer =spawn_interval
+	
+func getWaveTimeLeft() -> int:
+	return wave_timer
 
 #func _input(event: InputEvent) -> void:
 #	if minimapCamera.current:

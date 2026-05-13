@@ -9,5 +9,6 @@ script = ExtResource("1_qqe2i")
 [node name="Label3D" type="Label3D" parent="." unique_id=125109600]
 render_priority = 1
 outline_render_priority = 0
+modulate = Color(0.11764706, 0.4117647, 0, 1)
 text = "01"
 font = ExtResource("2_6qjpc")
