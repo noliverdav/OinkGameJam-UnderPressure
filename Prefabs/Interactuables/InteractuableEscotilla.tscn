@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dk8js7fuahsc2" path="res://Prefabs/Interactuables/interactuable_escotilla.gd" id="1_m127l"]
 [ext_resource type="Script" uid="uid://crjdp4pqalnli" path="res://Prefabs/Interactuables/Escotilla_Logica.gd" id="1_qnup6"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_s2akp"]
+[ext_resource type="PackedScene" uid="uid://btkws3y2vmvi6" path="res://Models/Cannon/CannonDoor.fbx" id="2_60w4q"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_m127l"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_s2akp"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_qnup6"]
 height = 3.8945847
@@ -94,14 +95,19 @@ script = ExtResource("1_qnup6")
 [node name="PivotPuerta" type="Node3D" parent="." unique_id=1919673624]
 transform = Transform3D(0.9999999, 0, 0, 0, -4.813788e-09, -0.9999999, 0, 0.11012664, -4.3711385e-08, -0.542, 0, 0)
 
+[node name="CannonDoor" parent="PivotPuerta" unique_id=990013017 instance=ExtResource("2_60w4q")]
+transform = Transform3D(-4.3711378e-08, 0.013962182, 0.9999028, -9.008095, -1.1439462, 0.01597315, 0.12599124, -0.9919348, 0.01385093, -0.07716465, -3.958e-09, -0.009971798)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PivotPuerta" unique_id=1825908988]
+transform = Transform3D(1, 0, 0, 0, 1.0000004, -5.684342e-14, 0, -4.440892e-16, 1, 0.5, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PivotPuerta/StaticBody3D" unique_id=1276300839]
+shape = SubResource("CylinderShape3D_m127l")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PivotPuerta" unique_id=554031439]
 transform = Transform3D(1, 0, 0, 0, 1.0000002, -5.684342e-14, 0, 0, 1, 0.5, 0, 0)
+visible = false
 mesh = SubResource("CylinderMesh_s2akp")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="PivotPuerta/MeshInstance3D" unique_id=1825908988]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PivotPuerta/MeshInstance3D/StaticBody3D" unique_id=1276300839]
-shape = SubResource("CylinderShape3D_m127l")
 
 [node name="Area3D" type="Area3D" parent="PivotPuerta/MeshInstance3D" unique_id=1813553044]
 script = ExtResource("1_m127l")
@@ -116,3 +122,6 @@ libraries/ = SubResource("AnimationLibrary_o8880")
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=730764646]
 tree_root = SubResource("AnimationNodeStateMachine_1shcc")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1607994515]
+visible = false

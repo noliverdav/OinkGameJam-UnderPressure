@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://pavmh5ybknl1"]
 
 [ext_resource type="Script" uid="uid://bg1058yj47cb0" path="res://Prefabs/Interactuables/interactuable_missile_cannon.gd" id="1_sghqk"]
+[ext_resource type="PackedScene" uid="uid://c4rb64bq5rv3k" path="res://Models/Ammo Shell/AmmoShell.fbx" id="2_8d71n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6jxix"]
 size = Vector3(1, 0.37695313, 1)
@@ -11,16 +12,21 @@ size = Vector3(1, 0.37695313, 1)
 
 [node name="InteractuableMissileCannon" type="Area3D" unique_id=702161493 node_paths=PackedStringArray("missile_mesh")]
 script = ExtResource("1_sghqk")
-missile_mesh = NodePath("MissilLoaded")
+missile_mesh = NodePath("AmmoShell")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=999006499]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.054750204, 0)
 shape = SubResource("BoxShape3D_6jxix")
 
 [node name="Cannon" type="MeshInstance3D" parent="." unique_id=1755722139]
+visible = false
 mesh = SubResource("TorusMesh_rk7jv")
 
 [node name="MissilLoaded" type="MeshInstance3D" parent="." unique_id=1720320546]
 transform = Transform3D(1, 0, 0, 0, 0.032830954, 0, 0, 0, 1, 0, 0.11850262, 0)
 visible = false
 mesh = SubResource("CylinderMesh_s2jhl")
+
+[node name="AmmoShell" parent="." unique_id=1881497026 instance=ExtResource("2_8d71n")]
+transform = Transform3D(-1.9854953, 8.742278e-08, 0, -1.7357752e-07, -1, 0, 0, 0, 2.247736, 0, 0, 0)
+visible = false

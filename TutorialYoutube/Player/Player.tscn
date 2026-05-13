@@ -56,12 +56,11 @@ decay = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.93565583, -1.1508439)
 
 [node name="MissilGrabed" type="MeshInstance3D" parent="Head/Camera3D/HandsPivot" unique_id=1858066620]
-transform = Transform3D(0.33697712, -1.2078539, 0, 0.7349034, 0.5538404, 0, 0, 0, 0.66181153, 0, 0, 0)
+transform = Transform3D(0.33697712, -1.2078539, 0, 0.7349034, 0.5538404, 0, 0, 0, 0.66181153, -0.34617668, 0.5277724, 0.78171825)
 script = ExtResource("2_2bhh8")
 
 [node name="AmmoShell" parent="Head/Camera3D/HandsPivot/MissilGrabed" unique_id=1881497026 instance=ExtResource("4_5ntnf")]
-transform = Transform3D(1.4, 0, 0, 0, 0.794, 0, 0, 0, 1.4, 0.25624228, -0.5573532, 0)
-visible = false
+transform = Transform3D(0.8, 0, 0, 0, 0.454, 0, 0, 0, 0.8, 0.25624228, -0.5573532, 0)
 
 [node name="InteractRay" parent="Head" unique_id=1197492959 instance=ExtResource("2_h0cin")]
 
