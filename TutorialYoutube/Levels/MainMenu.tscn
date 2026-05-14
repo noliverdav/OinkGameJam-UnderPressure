@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://bjkdm3gskwqmr" path="res://MainMenu.gd" id="1_5qolq"]
 [ext_resource type="PackedScene" uid="uid://cakk7ub4iwyn5" path="res://Models/Floor&Wall/Floor&Wall.fbx" id="1_d5vh4"]
 [ext_resource type="FontFile" uid="uid://b0ymmh53belyr" path="res://fonts/PixelatedEleganceRegular-ovawB.ttf" id="2_66px1"]
-[ext_resource type="Script" path="res://TutorialYoutube/Levels/camera_MainMenu.gd" id="2_u343c"]
+[ext_resource type="Script" uid="uid://c7rgwfgmpmshv" path="res://TutorialYoutube/Levels/camera_MainMenu.gd" id="2_u343c"]
 [ext_resource type="PackedScene" uid="uid://f1t63mo0lb3v" path="res://Models/Kitchen/Stove/Stove.fbx" id="2_w2v74"]
 [ext_resource type="PackedScene" uid="uid://cw6ceymux6jer" path="res://Models/Floor&Wall/Roof.fbx" id="3_yjs4a"]
 [ext_resource type="PackedScene" uid="uid://bm461wmi6ma73" path="res://Models/Poster/Poster01.fbx" id="4_y7612"]
 [ext_resource type="PackedScene" uid="uid://bi7jdk8baixmt" path="res://Models/Door/DoorFrame.fbx" id="5_n7w43"]
 [ext_resource type="PackedScene" uid="uid://cthmo00x24cg4" path="res://Models/Kitchen/Fridge/Fridge.fbx" id="6_t5cy8"]
-[ext_resource type="Script" path="res://TutorialYoutube/Levels/LightFlicker_Menu.gd" id="7_nhd4s"]
+[ext_resource type="Script" uid="uid://c6tab2psrxvyw" path="res://TutorialYoutube/Levels/LightFlicker_Menu.gd" id="7_nhd4s"]
 [ext_resource type="PackedScene" uid="uid://ce10uhhlpf8w0" path="res://Models/Pipes/Pipe01.fbx" id="7_vmk1w"]
 [ext_resource type="PackedScene" uid="uid://y1s0gcftux0d" path="res://Models/Bed/Bed.fbx" id="8_n0mve"]
 [ext_resource type="Shader" uid="uid://brknbqqgcqnyt" path="res://Shader/Overlay.gdshader" id="10_v24r5"]
@@ -36,6 +36,8 @@
 [ext_resource type="PackedScene" uid="uid://bhage7qfjqj8q" path="res://Models/Poster/Poster06.fbx" id="38_405p0"]
 [ext_resource type="PackedScene" uid="uid://b4gmiu2axega7" path="res://Models/Poster/Poster07.fbx" id="39_f0qim"]
 [ext_resource type="PackedScene" uid="uid://cotj7cue4at3l" path="res://Models/Poster/Poster08.fbx" id="40_r1s54"]
+[ext_resource type="AudioStream" uid="uid://8x5ctltt5mmf" path="res://Sounds/Bunker_Background.wav" id="43_wy62u"]
+[ext_resource type="AudioStream" uid="uid://cwtxealeeupvk" path="res://Sounds/2/FlickerLuces.wav" id="44_qy74k"]
 [ext_resource type="PackedScene" uid="uid://8srvmtn68smd" path="res://Models/Ammo Box/Ammobox.fbx" id="49_3xfr8"]
 [ext_resource type="PackedScene" uid="uid://c5tptaxsrlmhc" path="res://Models/TanqueOxigeno/TanqueOxigeno.fbx" id="50_8dn2a"]
 [ext_resource type="PackedScene" uid="uid://d4kbb1r24fj3u" path="res://Models/Radar/Radar_Base/Base_Radar.fbx" id="53_q0tui"]
@@ -754,3 +756,16 @@ transform = Transform3D(0.7949986, 0, 0.7602482, 0, 1.1, 0, -0.7602482, 0, 0.794
 
 [node name="Manguera" parent="." unique_id=2003291325 instance=ExtResource("58_ujlpg")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.7026649, 0.82744086, 2.499684)
+
+[node name="BunkerBackground" type="AudioStreamPlayer3D" parent="." unique_id=2110002143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.60277885, 0.32000002, 0.21060264)
+stream = ExtResource("43_wy62u")
+volume_db = -4.836
+max_db = -5.837
+autoplay = true
+
+[node name="FlickerLuces" type="AudioStreamPlayer3D" parent="." unique_id=849656065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4826154, 0.32000005, 0.669107)
+stream = ExtResource("44_qy74k")
+max_db = -5.953
+pitch_scale = 0.4
