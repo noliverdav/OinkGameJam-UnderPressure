@@ -232,5 +232,7 @@ theme_override_font_sizes/font_size = 32
 text = "QUIT"
 flat = true
 
+[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=1012019025]
+
 [connection signal="pressed" from="UI/GameOver/BoxContainer/VBoxContainer/RestartButton" to="UI" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="UI/GameOver/BoxContainer/VBoxContainer/QuitButton" to="UI" method="_on_quit_button_pressed"]

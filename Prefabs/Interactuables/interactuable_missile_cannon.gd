@@ -7,6 +7,7 @@ signal fireSignal(coordx_value, coordy_value, coordz_value)
 @export var Coor_x_Node: InteractuablePerilla
 @export var Coor_Y_Node: InteractuablePerilla
 @export var Coor_Z_Node: InteractuablePerilla
+@export var sfx_missil_launch: AudioStreamPlayer3D
 
 func interact(body):
 	if not enabled or GameState.get_value("gabbedMissil") == false:
@@ -26,6 +27,8 @@ func fire(body):
 		return
 	
 	loadState = false
+	if sfx_missil_launch:
+		sfx_missil_launch.play()
 	
 	var camera_node = body.find_child("Camera3D", true, false)
 	if camera_node:

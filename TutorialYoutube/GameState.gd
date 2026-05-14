@@ -1,7 +1,7 @@
 extends Node
 
 var state := {
-	"health": 75,
+	"health": 100,
 	"key": 0,
 	"gabbedMissil": false,
 	"enemyCurrentWave":0,
@@ -46,12 +46,16 @@ func take_damage(amount: int):
 
 	
 	set_value("health", max(0, new_health))
-	print(current_health)
+	print(new_health)
 	
 	if new_health <= 0:
 		print("Player Died!")
 	if player_node:
 		player_node.hurt(amount)
+		
+
+func playSound_by_healt():
+	AudioController.playSound_health()
 
 
 	

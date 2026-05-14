@@ -22,10 +22,19 @@ func _process(delta):
 	if Input.is_action_pressed("Increse_grades"):
 		if _internal_degrees < max:
 			_internal_degrees += step * delta * 10
+			if!$AudioStreamPlayer3D.playing:
+				$AudioStreamPlayer3D.play()
+
 			
 	if Input.is_action_pressed("Decrese_grades"):
 		if _internal_degrees > min:
 			_internal_degrees -= step * delta * 10
+			if!$AudioStreamPlayer3D.playing:
+				$AudioStreamPlayer3D.play()
+
+	if Input.is_action_just_released("Decrese_grades") or Input.is_action_just_released("Increse_grades") or current_degrees == min or current_degrees == max:
+		$AudioStreamPlayer3D.stop()
+
 	
 	current_degrees = round(_internal_degrees)
 	
@@ -41,9 +50,12 @@ func interact(body):
 	if not enabled:
 		return
 	is_interacting = true
+
 	
 func stop_interacting():
 	is_interacting = false
+	$AudioStreamPlayer3D.stop()
+
 
 func update_visual():
 	

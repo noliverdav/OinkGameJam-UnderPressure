@@ -15,4 +15,5 @@ func _ready() -> void:
 func toggle():
 	is_open = !is_open
 	var state = "Open" if is_open else "Closed"
+	$AudioStreamPlayer3D.play()
 	playback.travel(state)

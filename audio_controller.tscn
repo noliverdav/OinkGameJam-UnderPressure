@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dl0yj77terdm3"]
+
+[ext_resource type="Script" uid="uid://c865lr80tjkkr" path="res://audio_controller.gd" id="1_w1gap"]
+[ext_resource type="AudioStream" uid="uid://8x5ctltt5mmf" path="res://Sounds/Bunker_Background.wav" id="2_qpnks"]
+[ext_resource type="AudioStream" uid="uid://30p7tvs8uwbw" path="res://Sounds/Hit01.wav" id="3_31uvl"]
+[ext_resource type="AudioStream" uid="uid://m4nbgluwxccv" path="res://Sounds/Hit02.wav" id="4_onihc"]
+[ext_resource type="AudioStream" uid="uid://cwwep1q0n8w8j" path="res://Sounds/2/Step03.wav" id="5_5vlka"]
+[ext_resource type="AudioStream" uid="uid://xx0gdh3oymwu" path="res://Sounds/2/Steo04.wav" id="6_4nmhn"]
+[ext_resource type="AudioStream" uid="uid://dvyf5hvr37pai" path="res://Sounds/2/Step02.wav" id="7_jlr8o"]
+[ext_resource type="AudioStream" uid="uid://bh7cy2xheymwk" path="res://Sounds/2/Step01.wav" id="8_jtt1n"]
+
+[node name="AudioController" type="Node" unique_id=2074822072 node_paths=PackedStringArray("steps")]
+script = ExtResource("1_w1gap")
+steps = [NodePath("AudioListener2D/player_walk_sound"), NodePath("AudioListener2D/player_walk_sound2"), NodePath("AudioListener2D/player_walk_sound3"), NodePath("AudioListener2D/player_walk_sound4")]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=49356731]
+
+[node name="Music" type="AudioStreamPlayer" parent="AudioListener2D" unique_id=1115514450]
+stream = ExtResource("2_qpnks")
+volume_db = -15.0
+
+[node name="Enemy_hit_1" type="AudioStreamPlayer" parent="AudioListener2D" unique_id=845901848]
+stream = ExtResource("3_31uvl")
+
+[node name="Enemy_hit_2" type="AudioStreamPlayer" parent="AudioListener2D" unique_id=1627281349]
+stream = ExtResource("4_onihc")
+
+[node name="player_walk_sound" type="AudioStreamPlayer" parent="AudioListener2D" unique_id=1061698529]
+stream = ExtResource("5_5vlka")
+
+[node name="player_walk_sound2" type="AudioStreamPlayer" parent="AudioListener2D" unique_id=1840677244]
+stream = ExtResource("6_4nmhn")
+
+[node name="player_walk_sound3" type="AudioStreamPlayer" parent="AudioListener2D" unique_id=602138486]
+stream = ExtResource("7_jlr8o")
+
+[node name="player_walk_sound4" type="AudioStreamPlayer" parent="AudioListener2D" unique_id=1681753240]
+stream = ExtResource("8_jtt1n")

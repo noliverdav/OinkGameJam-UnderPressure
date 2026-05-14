@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8gy4hjnlf8m3"
+path="res://.godot/imported/Facility Alarm.mp3-8e01d904ebfcc94ab9d2fe0d442de72f.mp3str"
+
+[deps]
+
+source_file="res://Sounds/2/Facility Alarm.mp3"
+dest_files=["res://.godot/imported/Facility Alarm.mp3-8e01d904ebfcc94ab9d2fe0d442de72f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

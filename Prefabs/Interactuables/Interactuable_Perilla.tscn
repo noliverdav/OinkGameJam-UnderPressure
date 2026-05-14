@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://blh1t0w5b75y6" path="res://Prefabs/Interactuables/interactuable_perilla.gd" id="1_3suqk"]
 [ext_resource type="FontFile" uid="uid://b0ymmh53belyr" path="res://fonts/PixelatedEleganceRegular-ovawB.ttf" id="2_5ira2"]
 [ext_resource type="Material" uid="uid://bho8qnejp076s" path="res://Models/Manivela/MaterialManivela02.tres" id="3_oj00x"]
+[ext_resource type="AudioStream" uid="uid://cuc778a0mpbm" path="res://Sounds/2/manivelaGirando.wav" id="4_qrlk6"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ehmcw"]
 _surfaces = [{
@@ -72,3 +73,6 @@ shape = SubResource("ConcavePolygonShape3D_3uvtp")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=101002336]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14278877, 0)
 shape = SubResource("BoxShape3D_3suqk")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=211888734]
+stream = ExtResource("4_qrlk6")

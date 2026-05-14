@@ -30,8 +30,9 @@ func Destroy():
 	queue_free()
 
 func _on_attack_timer_timeout() -> void:
-	pass # Replace with function body.
-	GameState.take_damage(25) 
+	#pass # Replace with function body.
+	GameState.take_damage(25)
+	AudioController.play_Enemy_hit_1()
 
 func Set_selectedEnemy(a:bool):
 	selectedInMinimap = a

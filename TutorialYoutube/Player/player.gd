@@ -72,10 +72,11 @@ func _physics_process(delta):
 	if direction and moving:
 		velocity.x = lerp(velocity.x, direction.x * move_speed, accel * delta)
 		velocity.z = lerp(velocity.z, direction.z * move_speed, accel * delta)
+		AudioController.playRandomStep()
 	else:
 		velocity.x = lerp(velocity.x, 0.0, accel * delta)
 		velocity.z = lerp(velocity.z, 0.0, accel * delta)
-
+		
 	move_and_slide()
 	
 	# rotation
