@@ -2,18 +2,16 @@ extends Node3D
 
 @export var enemyManager: enemiesManager
 @export var sound: AudioStreamPlayer3D
-@export var alarm_roja: AnimationPlayer
-@export var alarm_verde: AnimationPlayer
+@onready var anim = $AnimationPlayer
 
 func _process(delta):
 	if enemyManager.Check_CleanEnemiesWave():
-		alarm_verde.play("Wave_Safe")
-		alarm_roja.stop()
+		visible = false
+		anim.stop()
 		if sound and sound.playing:
 			sound.stop()
 	else:
-		alarm_roja.play("WaveActive")
-		alarm_verde.stop()
+		visible = true
+		anim.play("WaveActive")
 		if sound and !sound.playing:
 			sound.play()
-	

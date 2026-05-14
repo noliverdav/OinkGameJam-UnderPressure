@@ -9,7 +9,7 @@ var _timer: float = 0.0
 var _bursting: bool = false
 
 func _ready() -> void:
-	_particles = get_parent() as GPUParticles3D
+	_particles = get_node(".") as GPUParticles3D
 	_particles.amount = base_amount
 	_particles.emitting = true
 	GameState.value_changed.connect(_on_value_changed)
