@@ -1412,17 +1412,17 @@ mesh = SubResource("QuadMesh_d7iq0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.072012)
 
 [node name="EnemyDegreeSeparetedPanel" parent="Interactuables" unique_id=1085039795 node_paths=PackedStringArray("enemyManager") instance=ExtResource("41_ns7an")]
-transform = Transform3D(0.15561098, -0.06460792, -0.6794196, 0.021479305, 0.6969748, -0.061357774, 0.6821465, -0.007207883, 0.15692095, 7.7572894, 1.5337131, -7.776302)
+transform = Transform3D(0.15561098, -0.06460792, -0.6794196, 0.021479305, 0.6969748, -0.061357774, 0.6821465, -0.007207883, 0.15692095, 7.7502475, 1.5337131, -7.7742715)
 showX = true
 enemyManager = NodePath("../Minimap")
 
 [node name="EnemyDegreeSeparetedPanel2" parent="Interactuables" unique_id=189385574 node_paths=PackedStringArray("enemyManager") instance=ExtResource("41_ns7an")]
-transform = Transform3D(-0.061612695, -0.07868239, -0.69282967, 0.026093662, 0.6947818, -0.08122458, 0.6967948, -0.03297561, -0.05822038, 7.807092, 1.504143, -7.1216745)
+transform = Transform3D(-0.061612695, -0.07868239, -0.69282967, 0.026093662, 0.6947818, -0.08122458, 0.6967948, -0.03297561, -0.05822038, 7.7902865, 1.504143, -7.1216745)
 showY = true
 enemyManager = NodePath("../Minimap")
 
 [node name="EnemyDegreeSeparetedPanel3" parent="Interactuables" unique_id=1386567656 node_paths=PackedStringArray("enemyManager") instance=ExtResource("41_ns7an")]
-transform = Transform3D(-0.30762833, -0.07158948, -0.6246917, 0.016773012, 0.69426644, -0.08782257, 0.6285566, -0.05356383, -0.30339327, 7.805249, 1.526482, -6.514346)
+transform = Transform3D(-0.30762833, -0.07158948, -0.6246917, 0.016773012, 0.69426644, -0.08782257, 0.6285566, -0.05356383, -0.30339327, 7.7907906, 1.526482, -6.5140066)
 showZ = true
 enemyManager = NodePath("../Minimap")
 
